@@ -7,51 +7,69 @@ export function ContactForm() {
   root.className = 'contact';
   root.innerHTML = `
     <style>
-      .contact { background: #eee9f0; border-top: 1px solid #e2dbe6; }
-      .contact__inner { display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; padding-block: 76px; }
-      .contact__copy .eyebrow { margin-bottom: 18px; }
-      .contact__copy .section-heading { font-size: clamp(35px, 3.7vw, 46px); }
-      .contact__intro { color: var(--muted); font-size: 14px; margin-top: 23px; max-width: 390px; }
+      .contact { background: #382638; color: #f7f4ee; }
+      .contact__inner { display: grid; grid-template-columns: 1fr 1.04fr; gap: 86px; padding-block: 86px 92px; }
+      .contact__copy { padding-top: 15px; }
+      .contact__copy .eyebrow { color: #cab4c7; font-size: 9px; margin-bottom: 26px; }
+      .contact__copy .section-heading { color: #f7f4ee; font-size: clamp(56px, 6vw, 86px); line-height: .98; }
+      .contact__copy .section-heading em { color: #c1a7bd; font-weight: 400; }
+      .contact__intro { color: #d3c4d0; font-size: 12px; max-width: 330px; margin-top: 26px; }
       .contact__channels { list-style: none; padding: 0; margin: 32px 0 0; }
-      .contact__channels li { display: flex; align-items: center; gap: 16px; margin-bottom: 23px; }
-      .contact__channel-icon { display: grid; place-items: center; width: 43px; height: 43px; border: 1px solid #d6cbdc; border-radius: 50%; color: var(--purple-light); flex-shrink: 0; }
-      .contact__channels small { display: block; margin-bottom: 4px; font-size: 10px; color: var(--muted); }
-      .contact__channels a { font-size: 19px; font-family: var(--serif); text-decoration: none; color: var(--purple); }
+      .contact__channels li { display: flex; align-items: center; gap: 18px; margin-bottom: 22px; }
+      .contact__channel-icon { display: grid; place-items: center; width: 45px; height: 45px; border: 1px solid #826c7f; border-radius: 50%; color: #c4aabe; flex-shrink: 0; }
+      .contact__channel-icon .icon { width: 19px; height: 19px; }
+      .contact__channels small { display: block; margin-bottom: 3px; font-size: 9px; color: #cebaca; }
+      .contact__channels a { color: #f7f4ee; font: 29px/1.2 var(--serif); text-decoration: none; }
       .contact__channels a:hover { text-decoration: underline; }
-      .contact__channels strong { display: block; font-size: 13px; font-weight: 500; color: var(--purple); }
-      .contact__note { border-top: 1px solid #d6cbdc; padding-top: 20px; margin-top: 28px; max-width: 390px; font-size: 12px; color: var(--muted); }
-      .consultation { background: var(--paper); border: 1px solid #e3dce6; padding: 32px; border-radius: 5px; box-shadow: 0 12px 35px #30203e04; }
-      .consultation h3 { font: 26px var(--serif); color: var(--purple); }
-      .consultation__intro { font-size: 12px; color: var(--muted); margin: 10px 0 25px; }
-      .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-      .form-field { margin-bottom: 18px; }
-      .form-field label { display: block; font-size: 11px; font-weight: 600; color: var(--purple); margin-bottom: 8px; }
-      .form-field label span { font-weight: 400; color: var(--muted); }
-      .form-field input, .form-field select, .form-field textarea { display: block; width: 100%; border: 1px solid #d6cfd9; border-radius: 3px; color: #302c32; padding: 12px 13px; min-height: 45px; background: #fff; font-size: 13px; }
-      .form-field textarea { min-height: 120px; resize: vertical; line-height: 1.65; }
-      .form-field input::placeholder, .form-field textarea::placeholder { color: #77717a; }
-      .form-field input[aria-invalid='true'], .form-field textarea[aria-invalid='true'], .form-field select[aria-invalid='true'] { border-color: #a22d36; }
-      .form-field__hint { display: block; margin-top: 6px; font-size: 10px; color: var(--muted); line-height: 1.5; }
+      .contact__channels a .icon { width: 15px; height: 15px; }
+      .contact__channels strong { display: block; font-size: 11px; font-weight: 400; color: #f7f4ee; }
+      .contact__note { border-top: 1px solid #826c7f; padding-top: 23px; margin-top: 33px; font-size: 10px; color: #d3c4d0; max-width: 365px; }
+      .contact__note .icon { width: 15px; height: 15px; margin-right: 4px; }
+      .consultation { background: var(--paper); color: var(--purple); padding: 38px; min-width: 0; }
+      .consultation h3 { font: 400 35px/1.1 var(--serif); letter-spacing: -.03em; }
+      .consultation__intro { color: var(--muted); font-size: 10px; margin: 12px 0 25px; }
+      .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+      .form-field { margin-bottom: 20px; min-width: 0; }
+      .form-field label { display: block; font-size: 10px; font-weight: 600; color: var(--purple); margin-bottom: 3px; }
+      .form-field label span { color: var(--muted); font-weight: 400; }
+      .form-field input, .form-field select, .form-field textarea { display: block; width: 100%; min-width: 0; border: 0; border-bottom: 1px solid #ad9caa; border-radius: 0; background: transparent; color: var(--purple); padding: 12px 0; min-height: 45px; font-size: 12px; }
+      .form-field select { padding-right: 20px; }
+      .form-field select option { background: var(--paper); color: var(--purple); }
+      .form-field textarea { resize: vertical; min-height: 95px; line-height: 1.7; }
+      .form-field input::placeholder, .form-field textarea::placeholder { color: #776b74; }
+      .form-field input[aria-invalid='true'], .form-field textarea[aria-invalid='true'], .form-field select[aria-invalid='true'] { border-bottom-color: #a22d36; }
+      .form-field__hint { display: block; font-size: 9px; color: var(--muted); margin-top: 8px; line-height: 1.7; }
       .form-error { color: #a22d36; font-size: 11px; line-height: 1.5; margin-top: 6px; }
       .form-error:empty { display: none; }
-      .form-consent { display: flex; align-items: flex-start; gap: 10px; font-size: 11px; line-height: 1.6; color: var(--muted); cursor: pointer; }
-      .form-consent input { margin: 2px 0 0; width: 17px; height: 17px; flex-shrink: 0; accent-color: var(--purple); }
-      .consultation__submit { width: 100%; margin-top: 22px; }
-      .consultation__privacy { text-align: center; font-size: 10px; color: var(--muted); margin-top: 12px; }
+      .form-consent { display: flex; align-items: flex-start; gap: 11px; font-size: 10px; line-height: 1.7; color: var(--muted); cursor: pointer; }
+      .form-consent input { margin: 2px 0 0; width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--purple); }
+      .consultation__submit { width: 100%; margin-top: 23px; justify-content: space-between; }
+      .consultation__privacy { font-size: 9px; text-align: center; color: var(--muted); margin-top: 12px; }
       .consultation__status { font-size: 12px; color: #a22d36; line-height: 1.6; margin-top: 12px; }
       .consultation__status:empty { display: none; }
-      .consultation__preview { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 22px; }
-      .consultation__preview h4 { font-size: 14px; color: var(--purple); margin: 0 0 8px; }
-      .consultation__preview p { font-size: 12px; color: var(--muted); }
-      .consultation__message { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; line-height: 1.6; margin: 15px 0; padding: 16px; background: #eee9f0; border-radius: 3px; }
-      .consultation__preview .button { width: 100%; }
-      @media (max-width: 1000px) { .contact__inner { gap: 36px; } .consultation { padding: 25px; } .form-row { grid-template-columns: 1fr; gap: 0; } }
-      @media (max-width: 760px) { .contact__inner { grid-template-columns: 1fr; padding-block: 52px; gap: 32px; } .consultation { padding: 25px 20px; } .form-field input, .form-field textarea, .form-field select { font-size: 16px; } .contact__copy .section-heading { max-width: 480px; } }
+      .consultation__preview { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 24px; }
+      .consultation__preview h4 { font: 400 28px/1.15 var(--serif); color: var(--purple); margin: 0 0 8px; }
+      .consultation__preview p { font-size: 11px; color: var(--muted); }
+      .consultation__message { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; line-height: 1.6; margin: 15px 0; padding: 16px; background: #e9e1e8; }
+      .consultation__preview .button { width: 100%; font-size: 11px; gap: 12px; }
+      @media (max-width: 1100px) { .contact__inner { gap: 45px; } .consultation { padding: 30px; } .form-row { grid-template-columns: 1fr; gap: 0; } }
+      @media (max-width: 760px) {
+        .contact__inner { grid-template-columns: 1fr; padding-block: 46px 50px; gap: 36px; }
+        .contact__copy { padding-top: 0; }
+        .contact__copy .section-heading { font-size: 66px; }
+        .contact__copy .eyebrow { font-size: 8px; }
+        .contact__intro { font-size: 12px; }
+        .consultation { padding: 29px 22px; }
+        .consultation h3 { font-size: 33px; }
+        .form-field input, .form-field textarea, .form-field select { font-size: 16px; }
+        .form-field label { font-size: 11px; }
+        .form-consent { font-size: 11px; }
+      }
     </style>
     <div class="contact__inner section-inner">
       <div class="contact__copy">
-        <p class="eyebrow">El primer paso es hablar</p>
-        <h2 class="section-heading" id="contacto-title">Contacto y formulario de consulta</h2>
+        <p class="eyebrow">Contacto y formulario de consulta</p>
+        <h2 class="section-heading" id="contacto-title">Hablemos.<br><em>Todo empieza<br>por aquí.</em></h2>
         <p class="contact__intro">Cuéntanos qué necesitas. Te ayudaremos a valorar las gestiones de procuraduría para tu procedimiento.</p>
         <ul class="contact__channels">
           <li><span class="contact__channel-icon">${icon('phone')}</span><div><small>Llámanos</small><a href="tel:${site.telephone}">${site.telephoneLabel}</a></div></li>

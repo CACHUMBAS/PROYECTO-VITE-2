@@ -1,79 +1,77 @@
 import { site } from '../data/site.js';
 import { icon } from './icons.js';
-import balance from '../assets/balanza.jpg';
+import architecture from '../assets/arquitectura-mediterranea.webp';
+import architectureSmall from '../assets/arquitectura-mediterranea-720.webp';
 
 export function Hero() {
   const root = document.createElement('div');
   root.innerHTML = `
     <style>
-      .hero { display: grid; grid-template-columns: 1.12fr 1fr; gap: 64px; align-items: center; padding-block: 64px 58px; }
-      .hero__welcome { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
-      .hero__welcome::before { content: ''; width: 26px; height: 1px; background: currentColor; }
-      .hero h1 { color: var(--purple); font-size: clamp(45px, 4.9vw, 67px); line-height: 1.05; font-weight: 400; letter-spacing: -.05em; max-width: 590px; }
-      .hero h1 em { color: var(--purple-light); font-weight: 400; }
-      .hero__description { font-size: 16px; color: var(--muted); max-width: 445px; margin: 24px 0 30px; }
-      .hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
-      .hero__professional { display: flex; align-items: center; gap: 14px; margin-top: 38px; padding-top: 26px; border-top: 1px solid var(--line); max-width: 440px; }
-      .hero__monogram { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #eae3ed; color: var(--purple); font: 19px var(--serif); }
-      .hero__professional strong { font-size: 13px; font-weight: 600; display: block; }
-      .hero__professional small { display: block; color: var(--muted); font-size: 11px; margin-top: 5px; }
-      .hero__visual { position: relative; margin: 0; padding: 0 0 26px 20px; }
-      .hero__visual::before { content: ''; position: absolute; inset: 30px -13px 0 0; background: #ece6ef; }
-      .hero__photo { position: relative; overflow: hidden; border-radius: 130px 4px 4px 4px; background: #b09776; }
-      .hero__photo img { width: 100%; height: 470px; object-fit: cover; object-position: 72% center; }
-      .hero__photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, #201429ad); }
-      .hero__caption { position: absolute; left: 50px; bottom: 59px; right: 20px; color: white; z-index: 1; }
-      .hero__caption span { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .2em; margin-bottom: 11px; }
-      .hero__caption p { font: 27px/1.2 var(--serif); max-width: 240px; }
-      .hero__seal { position: absolute; top: 25px; right: -3px; z-index: 2; display: flex; gap: 12px; align-items: center; padding: 17px; background: var(--paper); border: 1px solid #e3dbe6; box-shadow: 0 7px 22px #20142912; }
-      .hero__seal .icon { width: 28px; height: 28px; color: var(--purple-light); }
-      .hero__seal strong { display: block; font-size: 12px; font-weight: 600; }
-      .hero__seal small { font-size: 10px; color: var(--muted); }
-      .coverage { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #f3f0f4; }
-      .coverage__inner { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 25px; padding-block: 24px; }
-      .coverage__item { display: flex; align-items: center; gap: 14px; color: var(--purple-light); }
-      .coverage__item + .coverage__item { border-left: 1px solid #d9d2dc; padding-left: 30px; }
-      .coverage__item strong { display: block; color: var(--purple); font-size: 12px; font-weight: 600; }
-      .coverage__item span { display: block; color: var(--muted); font-size: 11px; margin-top: 5px; }
-      @media (max-width: 1000px) { .hero { gap: 34px; } .hero__photo img { height: 460px; } .hero h1 { font-size: 53px; } .hero__actions .button { padding-inline: 17px; } }
-      @media (max-width: 760px) {
-        .hero { grid-template-columns: 1fr; padding-block: 42px; gap: 38px; }
-        .hero h1 { font-size: clamp(43px, 9vw, 65px); max-width: 590px; }
-        .hero__welcome { margin-bottom: 22px; font-size: 10px; }
-        .hero__description { margin-block: 22px 26px; }
-        .hero__professional { margin-top: 28px; padding-top: 23px; }
-        .hero__visual { margin-right: 10px; padding-left: 12px; padding-bottom: 18px; }
-        .hero__photo img { height: 370px; }
-        .hero__seal { top: 24px; right: -6px; }
-        .hero__caption { left: 35px; bottom: 45px; }
-        .coverage__inner { grid-template-columns: 1fr; gap: 20px; padding-block: 26px; }
-        .coverage__item + .coverage__item { border-left: 0; padding-left: 0; }
+      .hero { position: relative; display: grid; grid-template-columns: 1.06fr 1fr; gap: 50px; padding-block: 48px 58px; }
+      .hero__copy { position: relative; z-index: 2; padding-top: 25px; }
+      .hero__overline { display: flex; align-items: center; gap: 13px; margin-bottom: 32px; }
+      .hero__overline::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #927c67; }
+      .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(74px, 8.15vw, 116px); line-height: .9; letter-spacing: -.055em; color: var(--purple); }
+      .hero h1 span { display: block; }
+      .hero h1 em { font-weight: 400; color: #84657e; }
+      .hero__description { max-width: 355px; color: var(--muted); font-size: 13px; margin: 30px 0 25px; }
+      .hero__actions { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; }
+      .hero__secondary { font-size: 11px; padding-block: 15px; text-decoration-thickness: 1px; }
+      .hero__secondary:hover { color: var(--purple-light); }
+      .hero__signature { display: flex; align-items: center; gap: 15px; margin-top: 36px; }
+      .hero__signature .icon { height: 35px; width: 35px; color: #8a7185; padding: 2px; }
+      .hero__signature strong { display: block; font-size: 11px; font-weight: 600; }
+      .hero__signature small { display: block; margin-top: 5px; font-size: 10px; color: var(--muted); }
+      .hero__visual { position: relative; margin: 0; padding: 0 0 28px 25px; min-width: 0; }
+      .hero__frame { overflow: hidden; height: 606px; background: #d2bfa2; border-radius: 220px 0 0 0; }
+      .hero__frame img { width: 100%; height: 100%; object-fit: cover; object-position: 67% center; animation: hero-image 1.3s ease-out both; }
+      .hero__visual::before { content: ''; position: absolute; inset: 20px -15px 6px 47px; border: 1px solid #bbadad; border-radius: 220px 0 0 0; z-index: -1; }
+      .hero__image-label { position: absolute; right: 15px; bottom: 43px; writing-mode: vertical-rl; color: white; font-size: 8px; letter-spacing: .18em; text-transform: uppercase; text-shadow: 0 1px 5px #0009; }
+      .hero__card { position: absolute; bottom: 48px; left: -15px; background: var(--purple); color: #f5f0e8; width: 229px; padding: 27px 29px; }
+      .hero__card .icon { width: 26px; height: 26px; margin-bottom: 15px; color: #c5b0c4; }
+      .hero__card p { font: 29px/1.05 var(--serif); letter-spacing: -.025em; }
+      .hero__card small { display: block; color: #cbbbca; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; margin-top: 16px; }
+      .hero__foot { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); padding-block: 20px; color: var(--muted); font-size: 9px; letter-spacing: .11em; text-transform: uppercase; }
+      .hero__foot a { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+      .hero__foot a .icon { transform: rotate(90deg); width: 17px; }
+      .hero__foot-center { color: var(--purple); }
+      @keyframes hero-image { from { opacity: .5; transform: scale(1.06); } to { opacity: 1; transform: scale(1); } }
+      @media (max-width: 1100px) {
+        .hero { gap: 30px; } .hero h1 { font-size: clamp(66px, 8.7vw, 92px); }
+        .hero__frame { height: 566px; } .hero__actions { gap: 15px; }
+        .hero__card { width: 210px; padding: 23px; left: -3px; }
       }
+      @media (max-width: 760px) {
+        .hero { grid-template-columns: 1fr; padding-block: 34px 35px; gap: 36px; }
+        .hero__copy { padding-top: 0; }
+        .hero h1 { font-size: clamp(68px, 12vw, 98px); line-height: .94; }
+        .hero__overline { margin-bottom: 26px; font-size: 9px; }
+        .hero__description { font-size: 13px; margin-block: 23px; }
+        .hero__signature { margin-top: 27px; }
+        .hero__visual { padding: 0 9px 24px 15px; margin-right: 8px; }
+        .hero__frame { height: 450px; border-top-left-radius: 170px; }
+        .hero__visual::before { right: -7px; bottom: 6px; left: 35px; border-top-left-radius: 170px; }
+        .hero__card { width: 203px; bottom: 45px; left: 0; padding: 24px; }
+        .hero__card p { font-size: 28px; }
+        .hero__foot { padding-block: 19px; font-size: 8px; flex-wrap: wrap; }
+        .hero__foot-center { display: none; }
+      }
+      @media (max-width: 360px) { .hero h1 { font-size: 61px; } .hero__actions { gap: 12px; } .hero__frame { height: 390px; } }
     </style>
     <div class="hero section-inner">
       <div class="hero__copy">
-        <p class="hero__welcome eyebrow">Bienvenida al sitio</p>
-        <h1 class="serif" id="inicio-title">La tranquilidad de estar <em>bien representado.</em></h1>
-        <p class="hero__description">Procuraduría cercana y rigurosa en Mallorca. Cuidamos cada trámite y cada plazo para que tu procedimiento siga adelante.</p>
-        <div class="hero__actions">
-          <a class="button" href="#contacto">Hablemos de tu caso ${icon('arrow')}</a>
-          <a class="button button--outline" href="#servicios">Conoce los servicios</a>
-        </div>
-        <div class="hero__professional">
-          <span class="hero__monogram" aria-hidden="true">GT</span>
-          <div><strong>${site.professional}</strong><small>${site.registration}</small></div>
-        </div>
+        <p class="hero__overline eyebrow">Procuraduría en Mallorca</p>
+        <h1 id="inicio-title"><span>Cada detalle.</span><span>Cada plazo.</span><span><em>A tu lado.</em></span></h1>
+        <p class="hero__description">La tranquilidad de estar bien representado. Impulsamos tu procedimiento con rigor, atención personal y la cercanía de siempre.</p>
+        <div class="hero__actions"><a class="button" href="#contacto">Hablemos de tu caso ${icon('diagonal')}</a><a class="hero__secondary" href="#servicios">Descubre nuestros servicios</a></div>
+        <div class="hero__signature">${icon('scales')}<div><strong>${site.professional}</strong><small>${site.registration}</small></div></div>
       </div>
       <figure class="hero__visual">
-        <div class="hero__photo"><img src="${balance}" alt="Balanza de la justicia en una sala de vistas" width="1080" height="608" fetchpriority="high" /></div>
-        <div class="hero__seal">${icon('scales')}<div><strong>Compromiso procesal</strong><small>Atención en cada paso</small></div></div>
-        <figcaption class="hero__caption"><span>Procurador Tomás · Mallorca</span><p>El detalle importa.<br>Tu confianza, también.</p></figcaption>
+        <div class="hero__frame"><img src="${architecture}" srcset="${architectureSmall} 720w, ${architecture} 1200w" sizes="(max-width: 760px) 100vw, 50vw" alt="Composición arquitectónica conceptual de arcos mediterráneos de piedra bañados por la luz" width="1200" height="800" fetchpriority="high" /></div>
+        <figcaption class="hero__image-label">Arquitectura mediterránea · Imagen conceptual</figcaption>
+        <div class="hero__card">${icon('pin')}<p>Conocemos el territorio.<br>Cuidamos el proceso.</p><small>Palma · Manacor · Inca</small></div>
       </figure>
     </div>
-    <div class="coverage"><div class="coverage__inner section-inner">
-      <div class="coverage__item">${icon('pin')}<div><strong>Palma · Manacor · Inca</strong><span>Otros partidos judiciales, por encargo</span></div></div>
-      <div class="coverage__item">${icon('clock')}<div><strong>${site.hours}</strong><span>Un contacto directo con tu procurador</span></div></div>
-      <div class="coverage__item">${icon('scales')}<div><strong>Representación y seguimiento</strong><span>En coordinación con tu abogado</span></div></div>
-    </div></div>`;
+    <div class="section-inner"><div class="hero__foot"><span>Bienvenida al sitio</span><span class="hero__foot-center">Cercanía en el trato. Precisión en cada gestión.</span><a href="#servicios">Sigue descubriendo ${icon('arrow')}</a></div></div>`;
   return root;
 }

@@ -9,18 +9,17 @@ export function Section({ id, contenido }) {
   styles.textContent = `
     .page-section { scroll-margin-top: 0; }
     .page-section:focus-visible { outline: 2px solid var(--purple-light); outline-offset: -2px; }
-    .section-inner { max-width: 1240px; margin-inline: auto; padding-inline: 32px; }
-    .section-heading { font-family: var(--serif); color: var(--purple); font-weight: 400; line-height: 1.12; font-size: clamp(32px, 4vw, 48px); letter-spacing: -.035em; }
-    @media (max-width: 760px) { .section-inner { padding-inline: 22px; } }
+    .section-inner { max-width: 1440px; margin-inline: auto; padding-inline: 64px; }
+    .section-heading { font-family: var(--serif); font-weight: 400; color: var(--purple); font-size: clamp(44px, 5.2vw, 72px); line-height: 1.02; letter-spacing: -.045em; }
+    @media (max-width: 1100px) { .section-inner { padding-inline: 38px; } }
+    @media (max-width: 760px) { .section-inner { padding-inline: 24px; } }
   `;
   section.append(styles);
   if (typeof contenido === 'string') {
     const template = document.createElement('template');
-    // Solo se admite HTML del proyecto; nunca texto procedente del formulario.
+    // Solo contenido del proyecto; los datos del formulario se insertan como texto.
     template.innerHTML = contenido;
     section.append(template.content.cloneNode(true));
-  } else {
-    section.append(contenido);
-  }
+  } else section.append(contenido);
   return section;
 }
