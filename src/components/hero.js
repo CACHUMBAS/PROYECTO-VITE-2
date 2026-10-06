@@ -26,7 +26,7 @@ export function Hero() {
       .hero__frame { overflow: hidden; height: 606px; background: #d2bfa2; border-radius: 220px 0 0 0; }
       .hero__frame img { width: 100%; height: 100%; object-fit: cover; object-position: 67% center; animation: hero-image 1.3s ease-out both; }
       .hero__visual::before { content: ''; position: absolute; inset: 20px -15px 6px 47px; border: 1px solid #bbadad; border-radius: 220px 0 0 0; z-index: -1; }
-      .hero__image-label { position: absolute; right: 15px; bottom: 43px; writing-mode: vertical-rl; color: white; font-size: 8px; letter-spacing: .18em; text-transform: uppercase; text-shadow: 0 1px 5px #0009; }
+      .hero__image-label { position: absolute; right: 15px; bottom: 43px; writing-mode: vertical-rl; color: var(--purple); background: #f7f4eef5; padding: 10px 6px; font-size: 8px; letter-spacing: .15em; text-transform: uppercase; }
       .hero__card { position: absolute; bottom: 48px; left: -15px; background: var(--purple); color: #f5f0e8; width: 229px; padding: 27px 29px; }
       .hero__card .icon { width: 26px; height: 26px; margin-bottom: 15px; color: #c5b0c4; }
       .hero__card p { font: 29px/1.05 var(--serif); letter-spacing: -.025em; }

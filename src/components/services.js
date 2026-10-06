@@ -22,7 +22,7 @@ export function Services() {
       .services__intro p:last-of-type { max-width: 305px; font-size: 12px; color: var(--muted); margin-top: 26px; }
       .services__index { display: flex; align-items: center; gap: 20px; margin-top: 38px; color: #816d7d; }
       .services__index span { font: 58px/1 var(--serif); }
-      .services__index small { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; max-width: 105px; line-height: 1.8; }
+      .services__index small { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; max-width: 105px; line-height: 1.8; color: var(--muted); }
       .services__list { margin: 0; padding: 0; list-style: none; border-top: 1px solid #cdbfc9; }
       .service { border-bottom: 1px solid #cdbfc9; }
       .service__link { display: grid; grid-template-columns: 24px 1fr 40px; gap: 23px; padding: 27px 0 28px; align-items: start; text-decoration: none; }

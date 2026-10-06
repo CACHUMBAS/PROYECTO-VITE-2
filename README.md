@@ -2,7 +2,9 @@
 
 Rediseño académico de [procuradortomas.com](https://www.procuradortomas.com/) con **Vite y componentes JavaScript independientes**, conforme al documento `2_Proyecto_Vite_2.docx`.
 
-Una web de una sola página con identidad morada y marfil, diseño adaptable, navegación móvil, seis servicios, preguntas frecuentes y un formulario que prepara una consulta para WhatsApp.
+Una web de una sola página con dirección editorial mediterránea: tipografía propia de la propuesta, arquitectura conceptual, servicios en filas, presentación del procurador y contacto con contraste. Mantiene el diseño adaptable, la navegación móvil y el formulario que prepara una consulta para WhatsApp.
+
+El [registro de recursos del rediseño](docs/recursos-redisenyo.md) documenta las decisiones, la imagen generada, su prompt, las fuentes y sus licencias.
 
 ## Ejecutar
 
@@ -35,11 +37,11 @@ npm run preview
 | HTML o texto como contenido | Cadenas estáticas mediante `template`; admite también nodos de otros componentes |
 | «Bienvenida al sitio» | Texto visible de la portada, sección `inicio` |
 | «Nuestros servicios destacados» | Título de la sección `servicios` |
-| «Contacto y formulario de consulta» | Título de la sección `contacto` |
+| «Contacto y formulario de consulta» | Texto visible sobre el título de la sección `contacto` |
 | Importación e incorporación con `app.append(...)` | `src/main.js`, orden Navbar → Inicio → Servicios → Contacto → Footer |
 | Estilos internos de los componentes | Etiquetas `style` en cada componente visual, con clases específicas |
 | CSS global mínimo | `src/styles/estilos.css`, reset, variables, foco y controles compartidos |
-| Actualización de la web indicada | Marca, fotografía, información profesional, servicios y canales de la web original |
+| Actualización de la web indicada | Nombre, información profesional, servicios y canales de la web original; nueva presentación visual |
 
 Las tres secciones se agrupan en un elemento `main` tras incorporarlas, conservando el orden solicitado y dejando cabecera y pie fuera del contenido principal.
 
@@ -48,10 +50,12 @@ Las tres secciones se agrupan en un elemento `main` tras incorporarlas, conserva
 ```text
 index.html
 public/favicon.svg
+public/fonts/             # WOFF2 locales y licencias OFL
 src/
   main.js
-  assets/                 # Logotipo y fotografía de la web original
+  assets/                 # Arquitectura conceptual optimizada; recursos archivados de v1
   components/
+    brand.js              # Marca tipográfica y símbolo reutilizable
     navbar.js             # Navegación y menú móvil
     section.js            # Contenedor reutilizable
     hero.js               # Portada e información profesional
@@ -80,7 +84,7 @@ No hay envío automático, servidor de correo, base de datos ni almacenamiento l
 
 - **7 pruebas automatizadas**: campos vacíos, espacios exteriores, correo opcional e incorrecto, límites, asuntos admitidos, consentimiento, codificación Unicode y símbolos, omisión del correo.
 - **Compilación con Vite** correcta.
-- **Navegador de escritorio y tamaños de 390 y 320 px**: sin desbordamiento horizontal, imágenes cargadas, secciones en orden.
+- **Navegador a 1440, 1024, 768, 390 y 320 px**: sin desbordamiento horizontal, imágenes cargadas, secciones en orden.
 - **Menú móvil**: apertura, cierre al navegar, Escape y devolución del foco al botón.
 - **Anclas**: destino visible debajo de la cabecera; foco en la sección tras navegar.
 - **Formulario**: errores y foco, asunto preseleccionado desde tarjetas, vista previa válida e invalidación al editar.
@@ -98,7 +102,7 @@ Datos e imágenes consultados el **6 de octubre de 2026**:
 - Logotipo: https://www.procuradortomas.com/img/logoTomas1.jpg
 - Fotografía: https://www.procuradortomas.com/img/balanza.jpg
 
-Las imágenes se reutilizan en el contexto de este ejercicio; no se afirma disponer de una licencia independiente. Los enlaces legales remiten explícitamente a la web original. Antes de una publicación comercial habría que confirmar los permisos de los recursos, actualizar la información profesional y preparar los textos legales de esa publicación. No se incluyen testimonios, cifras de experiencia ni garantías de resultados inventadas.
+Los recursos originales de la primera versión se conservan como archivo, pero el rediseño actual usa una imagen conceptual generada y una nueva composición de la marca. Véase el registro de recursos para la procedencia y el prompt. Los enlaces legales remiten explícitamente a la web original. Antes de una publicación comercial habría que confirmar los permisos de los recursos, actualizar la información profesional y preparar los textos legales de esa publicación. No se incluyen testimonios, cifras de experiencia ni garantías de resultados inventadas.
 
 Esta entrega es un prototipo académico local, identificado en el pie y marcado `noindex`. No se ha desplegado un sitio público ni conectado un servicio de correo.
 
@@ -108,6 +112,7 @@ Repositorio: https://github.com/CACHUMBAS/PROYECTO-VITE-2.git
 
 - `main`: preparación inicial.
 - `chore/configuracion-vite`: configuración del entorno.
-- `feat/web-procurador`: diseño, componentes, lógica, pruebas y documentación; parte de la configuración anterior.
+- `feat/web-procurador`: primera versión funcional, componentes, lógica, pruebas y documentación.
+- `feat/diseno-editorial`: segunda versión visual, fuentes locales e imagen conceptual optimizada; parte de la primera versión.
 
 Se trabaja por ramas y commits descriptivos. La rama de la web puede revisarse antes de integrarla en `main`.

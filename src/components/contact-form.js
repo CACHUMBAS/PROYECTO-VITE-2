@@ -30,10 +30,11 @@ export function ContactForm() {
       .consultation__intro { color: var(--muted); font-size: 10px; margin: 12px 0 25px; }
       .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
       .form-field { margin-bottom: 20px; min-width: 0; }
-      .form-field label { display: block; font-size: 10px; font-weight: 600; color: var(--purple); margin-bottom: 3px; }
+      .form-field label { display: block; font-size: 10px; font-weight: 600; color: var(--purple); margin-bottom: 8px; }
       .form-field label span { color: var(--muted); font-weight: 400; }
       .form-field input, .form-field select, .form-field textarea { display: block; width: 100%; min-width: 0; border: 0; border-bottom: 1px solid #ad9caa; border-radius: 0; background: transparent; color: var(--purple); padding: 12px 0; min-height: 45px; font-size: 12px; }
       .form-field select { padding-right: 20px; }
+      .form-field :is(input, select, textarea):focus-visible { outline-offset: 3px; }
       .form-field select option { background: var(--paper); color: var(--purple); }
       .form-field textarea { resize: vertical; min-height: 95px; line-height: 1.7; }
       .form-field input::placeholder, .form-field textarea::placeholder { color: #776b74; }
