@@ -53,12 +53,13 @@ public/favicon.svg
 public/fonts/             # WOFF2 locales y licencias OFL
 src/
   main.js
-  assets/                 # Arquitectura conceptual optimizada; recursos archivados de v1
+  assets/                 # Arquitectura conceptual y retrato optimizados; archivo de v1
   components/
     brand.js              # Marca tipográfica y símbolo reutilizable
     navbar.js             # Navegación y menú móvil
     section.js            # Contenedor reutilizable
     hero.js               # Portada e información profesional
+    about.js              # Retrato, presentación y contacto del procurador
     services.js           # Servicios, proceso y preguntas frecuentes
     contact-form.js       # Formulario, errores y vista previa
     footer.js             # Marca, enlaces y carácter académico
@@ -87,6 +88,7 @@ No hay envío automático, servidor de correo, base de datos ni almacenamiento l
 - **Navegador a 1440, 1024, 768, 390 y 320 px**: sin desbordamiento horizontal, imágenes cargadas, secciones en orden.
 - **Menú móvil**: apertura, cierre al navegar, Escape y devolución del foco al botón.
 - **Anclas**: destino visible debajo de la cabecera; foco en la sección tras navegar.
+- **Perfil del procurador**: acceso desde la portada y mediante `#procurador`, fotografía completa en móvil y enlace al contacto. Se integra en Servicios y conserva los tres apartados principales.
 - **Formulario**: errores y foco, asunto preseleccionado desde tarjetas, vista previa válida e invalidación al editar.
 - **Preguntas frecuentes**: apertura y cierre con controles nativos.
 - **Consola del navegador**: sin errores durante los recorridos comprobados.
@@ -102,7 +104,7 @@ Datos e imágenes consultados el **6 de octubre de 2026**:
 - Logotipo: https://www.procuradortomas.com/img/logoTomas1.jpg
 - Fotografía: https://www.procuradortomas.com/img/balanza.jpg
 
-Los recursos originales de la primera versión se conservan como archivo, pero el rediseño actual usa una imagen conceptual generada y una nueva composición de la marca. Véase el registro de recursos para la procedencia y el prompt. Los enlaces legales remiten explícitamente a la web original. Antes de una publicación comercial habría que confirmar los permisos de los recursos, actualizar la información profesional y preparar los textos legales de esa publicación. No se incluyen testimonios, cifras de experiencia ni garantías de resultados inventadas.
+Los recursos originales de la primera versión se conservan como archivo, pero el rediseño actual usa una imagen conceptual generada, una nueva composición de la marca y el retrato facilitado por el usuario para presentar a Gabriel Tomás Gili. Véase el registro de recursos para la procedencia y el prompt. Los enlaces legales remiten explícitamente a la web original. Antes de una publicación comercial habría que confirmar los permisos de los recursos, actualizar la información profesional y preparar los textos legales de esa publicación. No se incluyen testimonios, cifras de experiencia ni garantías de resultados inventadas.
 
 Esta entrega es un prototipo académico local, identificado en el pie y marcado `noindex`. No se ha desplegado un sitio público ni conectado un servicio de correo.
 
@@ -114,5 +116,6 @@ Repositorio: https://github.com/CACHUMBAS/PROYECTO-VITE-2.git
 - `chore/configuracion-vite`: configuración del entorno.
 - `feat/web-procurador`: primera versión funcional, componentes, lógica, pruebas y documentación.
 - `feat/diseno-editorial`: segunda versión visual, fuentes locales e imagen conceptual optimizada; parte de la primera versión.
+- `feat/seccion-procurador`: componente de presentación con el retrato aportado, imágenes adaptables y enlaces internos; parte del rediseño editorial.
 
 Se trabaja por ramas y commits descriptivos. La rama de la web puede revisarse antes de integrarla en `main`.

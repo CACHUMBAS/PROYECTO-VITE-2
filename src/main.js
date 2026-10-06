@@ -27,6 +27,6 @@ app.addEventListener('click', (event) => {
 });
 
 // Las anclas recibidas al abrir la página se resuelven tras montar los componentes.
-if (['#inicio', '#servicios', '#contacto'].includes(location.hash)) {
+if (['#inicio', '#servicios', '#procurador', '#contacto'].includes(location.hash)) {
   requestAnimationFrame(() => document.querySelector(location.hash)?.scrollIntoView());
 }

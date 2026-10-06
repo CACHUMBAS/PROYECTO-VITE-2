@@ -74,7 +74,8 @@ export function Navbar() {
   window.matchMedia('(min-width: 761px)').addEventListener('change', () => setOpen(false));
 
   const updateCurrent = () => {
-    const current = ['#inicio', '#servicios', '#contacto'].includes(location.hash) ? location.hash : '#inicio';
+    const hash = location.hash === '#procurador' ? '#servicios' : location.hash;
+    const current = ['#inicio', '#servicios', '#contacto'].includes(hash) ? hash : '#inicio';
     links.querySelectorAll('a[href^="#"]').forEach((link) => {
       if (link.getAttribute('href') === current) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');

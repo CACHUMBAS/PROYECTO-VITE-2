@@ -18,7 +18,9 @@ export function Hero() {
       .hero__actions { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; }
       .hero__secondary { font-size: 11px; padding-block: 15px; text-decoration-thickness: 1px; }
       .hero__secondary:hover { color: var(--purple-light); }
-      .hero__signature { display: flex; align-items: center; gap: 15px; margin-top: 36px; }
+      .hero__signature { width: fit-content; color: inherit; text-decoration: none; display: flex; align-items: center; gap: 15px; margin-top: 36px; }
+      .hero__profile-link { display: block; font-size: 10px; color: var(--purple-light); margin-top: 8px; text-decoration: underline; text-underline-offset: 3px; }
+      .hero__signature:hover .hero__profile-link { color: var(--purple); }
       .hero__signature .icon { height: 35px; width: 35px; color: #8a7185; padding: 2px; }
       .hero__signature strong { display: block; font-size: 11px; font-weight: 600; }
       .hero__signature small { display: block; margin-top: 5px; font-size: 10px; color: var(--muted); }
@@ -64,7 +66,7 @@ export function Hero() {
         <h1 id="inicio-title"><span>Cada detalle.</span><span>Cada plazo.</span><span><em>A tu lado.</em></span></h1>
         <p class="hero__description">La tranquilidad de estar bien representado. Impulsamos tu procedimiento con rigor, atención personal y la cercanía de siempre.</p>
         <div class="hero__actions"><a class="button" href="#contacto">Hablemos de tu caso ${icon('diagonal')}</a><a class="hero__secondary" href="#servicios">Descubre nuestros servicios</a></div>
-        <div class="hero__signature">${icon('scales')}<div><strong>${site.professional}</strong><small>${site.registration}</small></div></div>
+        <a class="hero__signature" href="#procurador" aria-label="Conoce a ${site.professional}, tu procurador">${icon('scales')}<div><strong>${site.professional}</strong><small>${site.registration}</small><span class="hero__profile-link">Conoce a tu procurador ↗</span></div></a>
       </div>
       <figure class="hero__visual">
         <div class="hero__frame"><img src="${architecture}" srcset="${architectureSmall} 720w, ${architecture} 1200w" sizes="(max-width: 760px) 100vw, 50vw" alt="Composición arquitectónica conceptual de arcos mediterráneos de piedra bañados por la luz" width="1200" height="800" fetchpriority="high" /></div>

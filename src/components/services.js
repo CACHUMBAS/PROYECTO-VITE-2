@@ -1,5 +1,6 @@
 import { site } from '../data/site.js';
 import { icon } from './icons.js';
+import { About } from './about.js';
 
 const services = [
   { title: 'Representación procesal', description: 'Ante los juzgados, en coordinación con tu abogado. Representación e impulso del procedimiento.' },
@@ -33,18 +34,6 @@ export function Services() {
       .service__arrow .icon { width: 16px; height: 16px; }
       .service__link:hover .service__arrow { background: var(--purple); color: white; }
       .service__link:hover h3 { transform: translateX(6px); }
-      .studio { background: #e9e1e8; border-top: 1px solid #d9ced8; border-bottom: 1px solid #d9ced8; }
-      .studio__inner { display: grid; grid-template-columns: 1fr 1.7fr; gap: 80px; padding-block: 78px; }
-      .studio__profile { display: flex; flex-direction: column; align-items: flex-start; }
-      .studio__seal { width: 100px; height: 125px; border: 1px solid #a891a5; border-radius: 60px 60px 0 0; display: grid; place-items: center; color: var(--purple); font: italic 66px var(--serif); margin-block: 29px 22px; }
-      .studio__profile h3 { font: 31px/1.15 var(--serif); letter-spacing: -.02em; color: var(--purple); }
-      .studio__profile p { font-size: 10px; color: #65545f; margin-top: 9px; }
-      .studio__statement { font: 400 clamp(38px, 4.5vw, 65px)/1.06 var(--serif); color: var(--purple); letter-spacing: -.04em; }
-      .studio__statement em { color: #7d6077; font-weight: 400; }
-      .studio__description { font-size: 12px; color: #65545f; max-width: 500px; margin-top: 24px; }
-      .studio__values { display: flex; flex-wrap: wrap; gap: 14px 28px; margin-top: 34px; border-top: 1px solid #cbbbca; padding-top: 22px; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; }
-      .studio__values span { display: flex; align-items: center; gap: 8px; }
-      .studio__values .icon { width: 14px; height: 14px; }
       .territory { position: relative; overflow: hidden; background: var(--purple); color: var(--paper); }
       .territory__inner { padding-block: 55px 47px; }
       .territory__heading { display: flex; justify-content: space-between; align-items: center; gap: 30px; }
@@ -67,7 +56,7 @@ export function Services() {
       .faq summary::after { content: '+'; font: 24px var(--serif); }
       .faq details[open] summary::after { content: '−'; }
       .faq details p { font-size: 12px; color: var(--muted); padding: 0 27px 24px 0; }
-      @media (max-width: 1100px) { .services, .faq { gap: 45px; } .service__link { gap: 13px; } .service h3 { font-size: 29px; } .studio__inner { gap: 45px; } }
+      @media (max-width: 1100px) { .services, .faq { gap: 45px; } .service__link { gap: 13px; } .service h3 { font-size: 29px; } }
       @media (max-width: 760px) {
         .services { grid-template-columns: 1fr; padding-block: 58px 66px; gap: 34px; }
         .services__intro { position: static; }
@@ -80,10 +69,6 @@ export function Services() {
         .service__arrow { width: 32px; height: 32px; }
         .service__number { font-size: 8px; padding-top: 9px; }
         .service p { font-size: 11px; }
-        .studio__inner { grid-template-columns: 1fr; gap: 35px; padding-block: 52px; }
-        .studio__seal { width: 72px; height: 90px; font-size: 50px; margin-block: 22px 17px; }
-        .studio__statement { font-size: 44px; }
-        .studio__values { gap: 18px; }
         .territory__inner { padding-block: 37px 32px; }
         .territory__heading { align-items: flex-start; flex-direction: column; gap: 13px; }
         .territory__word { font-size: clamp(87px, 21vw, 150px); margin-block: 23px 14px; }
@@ -99,15 +84,13 @@ export function Services() {
       <div class="services__intro"><p class="eyebrow">01 / Lo que hacemos</p><h2 class="section-heading" id="servicios-title">Nuestros servicios <em>destacados.</em></h2><p>Tu procedimiento requiere atención en cada fase. Nos ocupamos de las gestiones para que tú puedas centrarte en lo importante.</p><div class="services__index"><span>06</span><small>Servicios.<br>Un mismo compromiso.</small></div></div>
       <ol class="services__list">${services.map((service, index) => `<li class="service"><a class="service__link" href="#contacto" data-service="${service.title}" aria-label="Consultar sobre ${service.title.toLowerCase()}"><span class="service__number">0${index + 1}</span><div><h3>${service.title}</h3><p>${service.description}</p></div><span class="service__arrow">${icon('diagonal')}</span></a></li>`).join('')}</ol>
     </div>
-    <div class="studio"><div class="studio__inner section-inner">
-      <div class="studio__profile"><p class="eyebrow">02 / Tu procurador</p><div class="studio__seal" aria-hidden="true">Gt.</div><h3>${site.professional}</h3><p>${site.registration}</p></div>
-      <div><h3 class="studio__statement">Detrás de cada expediente,<br>hay algo que importa.<br><em>Y alguien que lo cuida.</em></h3><p class="studio__description">Una forma de trabajar basada en el trato directo, el seguimiento del procedimiento y la coordinación con tu abogado. Con nombre propio y atención a cada detalle.</p><div class="studio__values"><span>${icon('check')} Atención personal</span><span>${icon('check')} Seguimiento diario</span><span>${icon('check')} Coordinación profesional</span></div></div>
-    </div></div>
+    <div data-about></div>
     <div class="territory"><div class="territory__inner section-inner"><div class="territory__heading"><p class="eyebrow">03 / Cerca de donde nos necesitas</p><p>Representación en Palma, Manacor e Inca.<br>Otros partidos judiciales, por encargo.</p></div><p class="territory__word" aria-hidden="true">Mallorca.</p><div class="territory__locations">${['Palma', 'Manacor', 'Inca'].map((place, index) => `<div class="territory__location">${icon('pin')}<strong>${place}</strong><small>0${index + 1}</small></div>`).join('')}</div></div></div>
     <div class="faq section-inner"><div><p class="eyebrow">Antes de dar el primer paso</p><h3>Claridad desde<br>el principio.</h3><p class="faq__intro">Resolvemos algunas de las dudas más habituales sobre nuestros servicios.</p></div><div>
       <details><summary>¿Qué servicios puedo consultar?</summary><p>Puedes contactar para consultar la representación procesal, la tramitación judicial, los actos de comunicación y el seguimiento de plazos. Describe brevemente qué gestión necesitas.</p></details>
       <details><summary>¿En qué partidos judiciales trabaja el despacho?</summary><p>En Palma, Manacor e Inca. Para actuaciones en otros partidos judiciales, consulta previamente la disponibilidad por encargo.</p></details>
       <details><summary>¿Cómo puedo contactar?</summary><p>Puedes llamar al <a href="tel:${site.telephone}">${site.telephoneLabel}</a> o preparar una consulta por WhatsApp en el formulario. El horario publicado del despacho es de lunes a viernes, de 8:00 a 19:00.</p></details>
     </div></div>`;
+  root.querySelector('[data-about]').replaceWith(About());
   return root;
 }

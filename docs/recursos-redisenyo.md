@@ -28,6 +28,19 @@ Prompt utilizado:
 
 > Use case: photorealistic-natural. Asset type: editorial architectural photograph for an elegant Spanish legal representative's website, Mediterranean Mallorca design direction. Create ONE beautiful high-end architectural image, landscape 3:2. A restrained quiet sunlit Mediterranean limestone colonnade or loggia: very tall warm ivory stone arches receding in perspective toward the right, sandy textured stone walls, crisp diagonal afternoon shadows, a sliver of muted olive foliage far outside at the right, pale limestone floor. Camera facing a massive single arch at left foreground then a rhythmic series of narrower arches receding at right; refined proportions, subtle real natural stone imperfections. Contemporary architectural magazine photography, 35mm lens, photorealistic, natural warm light and deep shadow, understated prestige, calm precise composition, exceptionally beautiful light. Rich cream and sand tones, dark warm shadows, no saturation, no orange filters. This is a conceptual architectural setting, not any identifiable real office or courthouse. No people, no furniture, no law scales, no books, no text, no letters, no logos, no watermark. Image should be visually strong when cropped into a tall portrait on the right side of a website hero, keeping the primary arch readable in center. No layout/mockup, only the photograph.
 
+## Retrato del procurador
+
+Añadido en la rama `feat/seccion-procurador`, basada en `feat/diseno-editorial`. El usuario facilitó `procuradottomas.png` el 6 de octubre de 2026 para presentar al dueño del despacho, Gabriel Tomás Gili. El archivo aportado mide 1271 × 1237 píxeles.
+
+- `src/assets/gabriel-tomas-gili.webp`: 1100 × 1071, 126 112 bytes.
+- `src/assets/gabriel-tomas-gili-600.webp`: 600 × 584, 49 820 bytes.
+
+Se ha redimensionado y comprimido la imagen, conservando su encuadre y apariencia. No se ha realizado retoque generativo. El original permanece intacto en Descargas. El navegador elige la versión mediante `srcset`; se incluyen dimensiones, texto alternativo y carga diferida.
+
+El componente independiente `About()` contiene la presentación, el número de colegiado ya recogido en los datos del proyecto y los accesos al formulario y al teléfono. Se incorpora dentro de Servicios, tras las seis prestaciones, para conservar los tres apartados principales exigidos por el ejercicio. La portada enlaza a `#procurador` y la navegación identifica ese destino como parte de Servicios.
+
+Verificado a 320, 390, 768 y 1440 píxeles: sin desbordamiento horizontal, retrato cargado y proporcionado; enlaces al perfil y al contacto con foco en su destino. No se han añadido datos biográficos ni testimonios.
+
 ## Tipografías locales
 
 Las fuentes se sirven desde `public/fonts` y no requieren conectar con Google Fonts durante la visita. Tres archivos WOFF2 suman 101 736 bytes. Las variantes regulares principales se precargan y todas usan `font-display: swap`.
