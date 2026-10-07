@@ -7,64 +7,64 @@ export function ContactForm() {
   root.className = 'contact';
   root.innerHTML = `
     <style>
-      .contact { background: #382638; color: #f7f4ee; }
+      .contact { background: #1e241f; color: #f1eee6; }
       .contact__inner { display: grid; grid-template-columns: 1fr 1.04fr; gap: 86px; padding-block: 86px 92px; }
       .contact__copy { padding-top: 15px; }
-      .contact__copy .eyebrow { color: #cab4c7; font-size: 9px; margin-bottom: 26px; }
-      .contact__copy .section-heading { color: #f7f4ee; font-size: clamp(56px, 6vw, 86px); line-height: .98; }
-      .contact__copy .section-heading em { color: #c1a7bd; font-weight: 400; }
-      .contact__intro { color: #d3c4d0; font-size: 12px; max-width: 330px; margin-top: 26px; }
+      .contact__copy .eyebrow { color: #d8bf8c; font-size: 11px; margin-bottom: 26px; }
+      .contact__copy .section-heading { color: #f1eee6; font-size: clamp(56px, 6vw, 86px); line-height: .98; }
+      .contact__copy .section-heading em { color: #d8bf8c; font-weight: 400; }
+      .contact__intro { color: #d8d3c7; font-size: 14px; max-width: 330px; margin-top: 26px; }
       .contact__channels { list-style: none; padding: 0; margin: 32px 0 0; }
       .contact__channels li { display: flex; align-items: center; gap: 18px; margin-bottom: 22px; }
-      .contact__channel-icon { display: grid; place-items: center; width: 45px; height: 45px; border: 1px solid #826c7f; border-radius: 50%; color: #c4aabe; flex-shrink: 0; }
+      .contact__channel-icon { display: grid; place-items: center; width: 45px; height: 45px; border: 1px solid #777b69; border-radius: 50%; color: #d8bf8c; flex-shrink: 0; }
       .contact__channel-icon .icon { width: 19px; height: 19px; }
-      .contact__channels small { display: block; margin-bottom: 3px; font-size: 9px; color: #cebaca; }
-      .contact__channels a { color: #f7f4ee; font: 29px/1.2 var(--serif); text-decoration: none; }
+      .contact__channels small { display: block; margin-bottom: 3px; font-size: 11px; color: #d8d3c7; }
+      .contact__channels a { color: #f1eee6; font: 29px/1.2 var(--serif); text-decoration: none; }
       .contact__channels a:hover { text-decoration: underline; }
       .contact__channels a .icon { width: 15px; height: 15px; }
-      .contact__channels strong { display: block; font-size: 11px; font-weight: 400; color: #f7f4ee; }
-      .contact__note { border-top: 1px solid #826c7f; padding-top: 23px; margin-top: 33px; font-size: 10px; color: #d3c4d0; max-width: 365px; }
+      .contact__channels strong { display: block; font-size: 13px; font-weight: 400; color: #f1eee6; }
+      .contact__note { border-top: 1px solid #777b69; padding-top: 23px; margin-top: 33px; font-size: 12px; color: #d8d3c7; max-width: 365px; }
       .contact__note .icon { width: 15px; height: 15px; margin-right: 4px; }
-      .consultation { background: var(--paper); color: var(--purple); padding: 38px; min-width: 0; }
+      .consultation { background: var(--paper); color: var(--ink); padding: 38px; min-width: 0; }
       .consultation h3 { font: 400 35px/1.1 var(--serif); letter-spacing: -.03em; }
-      .consultation__intro { color: var(--muted); font-size: 10px; margin: 12px 0 25px; }
+      .consultation__intro { color: var(--muted); font-size: 12px; margin: 12px 0 25px; }
       .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
       .form-field { margin-bottom: 20px; min-width: 0; }
-      .form-field label { display: block; font-size: 10px; font-weight: 600; color: var(--purple); margin-bottom: 8px; }
+      .form-field label { display: block; font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
       .form-field label span { color: var(--muted); font-weight: 400; }
-      .form-field input, .form-field select, .form-field textarea { display: block; width: 100%; min-width: 0; border: 0; border-bottom: 1px solid #ad9caa; border-radius: 0; background: transparent; color: var(--purple); padding: 12px 0; min-height: 45px; font-size: 12px; }
+      .form-field input, .form-field select, .form-field textarea { display: block; width: 100%; min-width: 0; border: 0; border-bottom: 1px solid #a8a18e; border-radius: 0; background: transparent; color: var(--ink); padding: 12px 0; min-height: 45px; font-size: 14px; }
       .form-field select { padding-right: 20px; }
       .form-field :is(input, select, textarea):focus-visible { outline-offset: 3px; }
-      .form-field select option { background: var(--paper); color: var(--purple); }
+      .form-field select option { background: var(--paper); color: var(--ink); }
       .form-field textarea { resize: vertical; min-height: 95px; line-height: 1.7; }
-      .form-field input::placeholder, .form-field textarea::placeholder { color: #776b74; }
+      .form-field input::placeholder, .form-field textarea::placeholder { color: #716b60; }
       .form-field input[aria-invalid='true'], .form-field textarea[aria-invalid='true'], .form-field select[aria-invalid='true'] { border-bottom-color: #a22d36; }
-      .form-field__hint { display: block; font-size: 9px; color: var(--muted); margin-top: 8px; line-height: 1.7; }
-      .form-error { color: #a22d36; font-size: 11px; line-height: 1.5; margin-top: 6px; }
+      .form-field__hint { display: block; font-size: 11px; color: var(--muted); margin-top: 8px; line-height: 1.7; }
+      .form-error { color: #a22d36; font-size: 13px; line-height: 1.5; margin-top: 6px; }
       .form-error:empty { display: none; }
-      .form-consent { display: flex; align-items: flex-start; gap: 11px; font-size: 10px; line-height: 1.7; color: var(--muted); cursor: pointer; }
-      .form-consent input { margin: 2px 0 0; width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--purple); }
+      .form-consent { display: flex; align-items: flex-start; gap: 11px; font-size: 12px; line-height: 1.7; color: var(--muted); cursor: pointer; }
+      .form-consent input { margin: 2px 0 0; width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--ink); }
       .consultation__submit { width: 100%; margin-top: 23px; justify-content: space-between; }
-      .consultation__privacy { font-size: 9px; text-align: center; color: var(--muted); margin-top: 12px; }
-      .consultation__status { font-size: 12px; color: #a22d36; line-height: 1.6; margin-top: 12px; }
+      .consultation__privacy { font-size: 11px; text-align: center; color: var(--muted); margin-top: 12px; }
+      .consultation__status { font-size: 14px; color: #a22d36; line-height: 1.6; margin-top: 12px; }
       .consultation__status:empty { display: none; }
       .consultation__preview { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 24px; }
-      .consultation__preview h4 { font: 400 28px/1.15 var(--serif); color: var(--purple); margin: 0 0 8px; }
-      .consultation__preview p { font-size: 11px; color: var(--muted); }
-      .consultation__message { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; line-height: 1.6; margin: 15px 0; padding: 16px; background: #e9e1e8; }
-      .consultation__preview .button { width: 100%; font-size: 11px; gap: 12px; }
+      .consultation__preview h4 { font: 400 28px/1.15 var(--serif); color: var(--ink); margin: 0 0 8px; }
+      .consultation__preview p { font-size: 13px; color: var(--muted); }
+      .consultation__message { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; line-height: 1.6; margin: 15px 0; padding: 16px; background: #e7e2d7; }
+      .consultation__preview .button { width: 100%; font-size: 13px; gap: 12px; }
       @media (max-width: 1100px) { .contact__inner { gap: 45px; } .consultation { padding: 30px; } .form-row { grid-template-columns: 1fr; gap: 0; } }
       @media (max-width: 760px) {
         .contact__inner { grid-template-columns: 1fr; padding-block: 46px 50px; gap: 36px; }
         .contact__copy { padding-top: 0; }
         .contact__copy .section-heading { font-size: 66px; }
-        .contact__copy .eyebrow { font-size: 8px; }
-        .contact__intro { font-size: 12px; }
+        .contact__copy .eyebrow { font-size: 10px; }
+        .contact__intro { font-size: 14px; }
         .consultation { padding: 29px 22px; }
         .consultation h3 { font-size: 33px; }
         .form-field input, .form-field textarea, .form-field select { font-size: 16px; }
-        .form-field label { font-size: 11px; }
-        .form-consent { font-size: 11px; }
+        .form-field label { font-size: 13px; }
+        .form-consent { font-size: 13px; }
       }
     </style>
     <div class="contact__inner section-inner">

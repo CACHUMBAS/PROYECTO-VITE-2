@@ -7,33 +7,33 @@ export function Navbar() {
   header.className = 'site-header';
   header.innerHTML = `
     <style>
-      .site-header { position: sticky; top: 0; z-index: 20; background: #f7f4eef5; backdrop-filter: blur(14px); border-bottom: 1px solid #dcd4d799; }
-      .navbar { max-width: 1440px; min-height: 101px; margin: auto; padding: 20px 64px; display: flex; align-items: center; gap: 30px; }
-      .navbar__brand { flex-shrink: 0; color: var(--purple); text-decoration: none; }
-      .navbar__location { margin-left: 26px; font-size: 8px; line-height: 1.8; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding-left: 24px; border-left: 1px solid var(--line); }
-      .navbar__links { display: flex; align-items: center; gap: 31px; margin-left: auto; }
-      .navbar__links > a { position: relative; padding: 14px 0; font-size: 11px; text-decoration: none; color: var(--muted); }
-      .navbar__links > a:hover, .navbar__links > a[aria-current] { color: var(--purple); }
-      .navbar__links > a[aria-current]::after { content: ''; position: absolute; bottom: 5px; left: 0; width: 17px; height: 1px; background: var(--purple-light); }
-      .navbar__links > .navbar__phone { display: flex; align-items: center; gap: 10px; margin-left: 26px; color: var(--purple); font-size: 11px; }
-      .navbar__phone .icon { padding: 12px; border: 1px solid #c6b9c3; border-radius: 50%; width: 44px; height: 44px; }
-      .navbar__phone:hover .icon { background: #e9e1e7; }
-      .navbar__toggle { display: none; width: 46px; height: 46px; padding: 13px; border: 1px solid #cabdc7; border-radius: 50%; background: transparent; color: var(--purple); }
+      .site-header { position: fixed; inset: 0 0 auto; z-index: 20; color: var(--paper); background: #141815d9; backdrop-filter: blur(14px); border-bottom: 1px solid #ffffff26; }
+      .navbar { max-width: 1440px; min-height: 96px; margin: auto; padding: 20px 64px; display: flex; align-items: center; gap: 30px; }
+      .navbar__brand { flex-shrink: 0; text-decoration: none; }
+      .navbar__location { margin-left: 26px; font-size: 10px; line-height: 1.8; letter-spacing: .08em; text-transform: uppercase; color: #d8d3c7; padding-left: 24px; border-left: 1px solid #ffffff40; }
+      .navbar__links { display: flex; align-items: center; gap: 32px; margin-left: auto; }
+      .navbar__links > a { position: relative; padding: 14px 0; font-size: 13px; text-decoration: none; }
+      .navbar__links > a:hover, .navbar__links > a[aria-current] { color: var(--champagne); }
+      .navbar__links > a[aria-current]::after { content: ''; position: absolute; bottom: 5px; left: 0; width: 18px; height: 1px; background: var(--champagne); }
+      .navbar__links > .navbar__phone { display: flex; align-items: center; gap: 10px; margin-left: 16px; padding: 12px 17px; border: 1px solid #ffffff66; }
+      .navbar__phone .icon { width: 17px; height: 17px; }
+      .navbar__phone:hover { background: #ffffff0d; }
+      .navbar__toggle { display: none; width: 46px; height: 46px; padding: 12px; border: 1px solid #ffffff66; background: transparent; color: var(--paper); }
       .navbar__toggle span { display: block; height: 1px; background: currentColor; margin: 5px 0; transition: transform .2s, opacity .2s; }
       .navbar__toggle[aria-expanded='true'] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
       .navbar__toggle[aria-expanded='true'] span:nth-child(2) { opacity: 0; }
       .navbar__toggle[aria-expanded='true'] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
       @media (max-width: 1100px) { .navbar { padding-inline: 38px; gap: 25px; } .navbar__location { display: none; } .navbar__links > .navbar__phone { margin-left: 0; } }
       @media (max-width: 760px) {
-        .navbar { min-height: 83px; padding: 16px 24px; justify-content: space-between; gap: 18px; }
+        .navbar { min-height: 82px; padding: 16px 24px; justify-content: space-between; gap: 18px; }
         .navbar__toggle { display: block; }
-        .navbar__brand .brand__mark { width: 33px; height: 42px; }
-        .navbar__brand .brand__name strong { font-size: 30px; }
-        .navbar__links { display: none; position: absolute; left: 0; right: 0; top: 100%; padding: 12px 26px 25px; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 20px 25px #3826380c; max-height: calc(100dvh - 83px); overflow-y: auto; }
+        .navbar__brand .brand strong { font-size: 30px; }
+        .navbar__brand .brand small { font-size: 8px; margin-top: 8px; }
+        .navbar__links { display: none; position: absolute; left: 0; right: 0; top: 100%; padding: 12px 24px 25px; flex-direction: column; align-items: stretch; gap: 0; background: var(--ink); border-bottom: 1px solid #ffffff40; box-shadow: 0 20px 25px #14181526; max-height: calc(100dvh - 82px); overflow-y: auto; }
         .navbar__links[data-open='true'] { display: flex; }
-        .navbar__links > a { padding: 14px 0; font-size: 20px; font-family: var(--serif); border-bottom: 1px solid var(--line); }
-        .navbar__links > a[aria-current]::after { bottom: 8px; width: 18px; }
-        .navbar__links > .navbar__phone { margin-top: 12px; border: 0; font-family: inherit; font-size: 12px; }
+        .navbar__links > a { padding: 15px 0; font-size: 27px; font-family: var(--serif); border-bottom: 1px solid #ffffff30; }
+        .navbar__links > a[aria-current]::after { bottom: 8px; }
+        .navbar__links > .navbar__phone { margin-top: 18px; font-family: inherit; font-size: 14px; justify-content: center; }
       }
     </style>
     <nav class="navbar" aria-label="Navegación principal">

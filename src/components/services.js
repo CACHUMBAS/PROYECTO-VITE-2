@@ -15,60 +15,63 @@ export function Services() {
   const root = document.createElement('div');
   root.innerHTML = `
     <style>
-      .services { display: grid; grid-template-columns: .8fr 1.3fr; gap: 95px; padding-block: 100px 110px; }
-      .services__intro { position: sticky; top: 145px; align-self: start; }
-      .services__intro .eyebrow { margin-bottom: 27px; }
-      .services__intro .section-heading { max-width: 425px; font-size: clamp(45px, 4.4vw, 65px); }
-      .services__intro .section-heading em { color: var(--purple-light); font-weight: 400; }
-      .services__intro p:last-of-type { max-width: 305px; font-size: 12px; color: var(--muted); margin-top: 26px; }
-      .services__index { display: flex; align-items: center; gap: 20px; margin-top: 38px; color: #816d7d; }
+      .services { display: grid; grid-template-columns: .85fr 1.3fr; gap: 95px; padding-block: 100px 110px; }
+      .services__intro { position: sticky; top: 142px; align-self: start; }
+      .services__intro .eyebrow { margin-bottom: 22px; }
+      .services__intro .section-heading { max-width: 440px; font-size: clamp(53px, 5.1vw, 74px); line-height: .95; }
+      .services__intro .section-heading em { color: var(--accent); font-weight: 400; }
+      .services__intro p:last-of-type { max-width: 345px; font-size: 14px; color: var(--muted); margin-top: 25px; }
+      .services__index { display: flex; align-items: center; gap: 20px; margin-top: 38px; color: var(--accent); }
       .services__index span { font: 58px/1 var(--serif); }
-      .services__index small { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; max-width: 105px; line-height: 1.8; color: var(--muted); }
-      .services__list { margin: 0; padding: 0; list-style: none; border-top: 1px solid #cdbfc9; }
-      .service { border-bottom: 1px solid #cdbfc9; }
-      .service__link { display: grid; grid-template-columns: 24px 1fr 40px; gap: 23px; padding: 27px 0 28px; align-items: start; text-decoration: none; }
-      .service__number { font-size: 9px; color: var(--purple-light); padding-top: 12px; }
-      .service h3 { font: 400 33px/1.15 var(--serif); letter-spacing: -.025em; color: var(--purple); transition: transform .25s; }
-      .service p { color: var(--muted); font-size: 11px; line-height: 1.8; margin-top: 8px; max-width: 420px; }
-      .service__arrow { display: grid; place-items: center; margin-top: 5px; width: 40px; height: 40px; border: 1px solid #cdbfc9; border-radius: 50%; transition: background .25s, color .25s; }
-      .service__arrow .icon { width: 16px; height: 16px; }
-      .service__link:hover .service__arrow { background: var(--purple); color: white; }
-      .service__link:hover h3 { transform: translateX(6px); }
-      .territory { position: relative; overflow: hidden; background: var(--purple); color: var(--paper); }
+      .services__index small { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; line-height: 1.8; color: var(--muted); }
+      .services__list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); min-width: 0; }
+      .service { border-bottom: 1px solid var(--line); }
+      .service summary { display: grid; grid-template-columns: 24px minmax(0, 1fr) 25px; gap: 23px; padding: 28px 0; align-items: center; list-style: none; cursor: pointer; }
+      .service summary::-webkit-details-marker { display: none; }
+      .service__number { font-size: 11px; color: var(--accent); }
+      .service__title { font: 400 34px/1.15 var(--serif); letter-spacing: -.025em; color: var(--ink); }
+      .service__toggle { position: relative; width: 22px; height: 22px; }
+      .service__toggle::before, .service__toggle::after { content: ''; position: absolute; background: currentColor; top: 10px; left: 4px; width: 14px; height: 1px; }
+      .service__toggle::after { transform: rotate(90deg); transition: transform .2s; }
+      .service[open] .service__toggle::after { transform: rotate(0); }
+      .service summary:hover .service__title { color: var(--accent); }
+      .service__body { padding: 0 48px 28px 47px; }
+      .service__body p { color: var(--muted); font-size: 14px; max-width: 450px; }
+      .service__link { display: inline-flex; align-items: center; gap: 15px; padding-block: 14px 10px; margin-top: 6px; font-size: 12px; text-decoration-thickness: 1px; }
+      .service__link .icon { width: 16px; height: 16px; }
+      .territory { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); }
       .territory__inner { padding-block: 55px 47px; }
       .territory__heading { display: flex; justify-content: space-between; align-items: center; gap: 30px; }
-      .territory .eyebrow { color: #d2bed0; }
-      .territory__heading p:last-child { font-size: 11px; color: #ccb9c9; max-width: 300px; }
-      .territory__word { font: 400 clamp(100px, 17vw, 245px)/1.1 var(--serif); text-align: center; letter-spacing: -.05em; color: #e8dce5; margin: 8px 0 4px; }
+      .territory .eyebrow { color: #d8bf8c; }
+      .territory__heading p:last-child { font-size: 13px; color: #d8d3c7; max-width: 300px; }
+      .territory__word { font: 400 clamp(100px, 17vw, 245px)/1.1 var(--serif); text-align: center; letter-spacing: -.05em; color: #eae3d4; margin: 8px 0 4px; }
       .territory__locations { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #ffffff30; }
       .territory__location { display: flex; justify-content: center; align-items: center; gap: 12px; padding-top: 26px; }
-      .territory__location .icon { color: #c8b0c2; width: 17px; height: 17px; }
-      .territory__location strong { font-size: 11px; font-weight: 500; }
-      .territory__location small { font-size: 8px; color: #c8b0c2; margin-left: 2px; }
+      .territory__location .icon { color: #d8bf8c; width: 17px; height: 17px; }
+      .territory__location strong { font-size: 13px; font-weight: 500; }
+      .territory__location small { font-size: 10px; color: #d8bf8c; margin-left: 2px; }
       .faq { display: grid; grid-template-columns: .85fr 1.3fr; gap: 95px; padding-block: 94px 106px; }
       .faq .eyebrow { margin-bottom: 21px; }
-      .faq h3 { font: 400 57px/.98 var(--serif); color: var(--purple); letter-spacing: -.04em; }
-      .faq__intro { color: var(--muted); font-size: 12px; max-width: 255px; margin-top: 21px; }
-      .faq details { border-bottom: 1px solid #cdbfc9; }
-      .faq details:first-child { border-top: 1px solid #cdbfc9; }
-      .faq summary { display: flex; justify-content: space-between; gap: 22px; align-items: center; cursor: pointer; list-style: none; font-size: 12px; line-height: 1.7; color: var(--purple); padding-block: 25px; }
+      .faq h3 { font: 400 57px/.98 var(--serif); color: var(--ink); letter-spacing: -.04em; }
+      .faq__intro { color: var(--muted); font-size: 14px; max-width: 255px; margin-top: 21px; }
+      .faq details { border-bottom: 1px solid #c9c6bc; }
+      .faq details:first-child { border-top: 1px solid #c9c6bc; }
+      .faq summary { display: flex; justify-content: space-between; gap: 22px; align-items: center; cursor: pointer; list-style: none; font-size: 14px; line-height: 1.7; color: var(--ink); padding-block: 25px; }
       .faq summary::-webkit-details-marker { display: none; }
       .faq summary::after { content: '+'; font: 24px var(--serif); }
       .faq details[open] summary::after { content: '−'; }
-      .faq details p { font-size: 12px; color: var(--muted); padding: 0 27px 24px 0; }
-      @media (max-width: 1100px) { .services, .faq { gap: 45px; } .service__link { gap: 13px; } .service h3 { font-size: 29px; } }
+      .faq details p { font-size: 14px; color: var(--muted); padding: 0 27px 24px 0; }
+      @media (max-width: 1100px) { .services, .faq { gap: 45px; } .service summary { gap: 13px; } .service__title { font-size: 30px; } .service__body { padding-left: 37px; padding-right: 25px; } }
       @media (max-width: 760px) {
-        .services { grid-template-columns: 1fr; padding-block: 58px 66px; gap: 34px; }
+        .services { grid-template-columns: 1fr; padding-block: 60px 66px; gap: 34px; }
         .services__intro { position: static; }
-        .services__intro .section-heading { max-width: 440px; font-size: 51px; }
+        .services__intro .section-heading { max-width: 440px; font-size: 56px; }
         .services__intro .eyebrow { margin-bottom: 19px; }
         .services__intro p:last-of-type { max-width: 410px; margin-top: 20px; }
         .services__index { display: none; }
-        .service__link { grid-template-columns: 17px minmax(0, 1fr) 32px; gap: 11px; padding-block: 23px; }
-        .service h3 { font-size: 29px; }
-        .service__arrow { width: 32px; height: 32px; }
-        .service__number { font-size: 8px; padding-top: 9px; }
-        .service p { font-size: 11px; }
+        .service summary { grid-template-columns: 18px minmax(0, 1fr) 22px; gap: 11px; padding-block: 23px; }
+        .service__title { font-size: 28px; }
+        .service__body { padding-left: 29px; padding-right: 0; }
         .territory__inner { padding-block: 37px 32px; }
         .territory__heading { align-items: flex-start; flex-direction: column; gap: 13px; }
         .territory__word { font-size: clamp(87px, 21vw, 150px); margin-block: 23px 14px; }
@@ -81,8 +84,8 @@ export function Services() {
       }
     </style>
     <div class="services section-inner">
-      <div class="services__intro"><p class="eyebrow">01 / Lo que hacemos</p><h2 class="section-heading" id="servicios-title">Nuestros servicios <em>destacados.</em></h2><p>Tu procedimiento requiere atención en cada fase. Nos ocupamos de las gestiones para que tú puedas centrarte en lo importante.</p><div class="services__index"><span>06</span><small>Servicios.<br>Un mismo compromiso.</small></div></div>
-      <ol class="services__list">${services.map((service, index) => `<li class="service"><a class="service__link" href="#contacto" data-service="${service.title}" aria-label="Consultar sobre ${service.title.toLowerCase()}"><span class="service__number">0${index + 1}</span><div><h3>${service.title}</h3><p>${service.description}</p></div><span class="service__arrow">${icon('diagonal')}</span></a></li>`).join('')}</ol>
+      <div class="services__intro"><h2 class="eyebrow" id="servicios-title">Nuestros servicios destacados</h2><p class="section-heading">El detalle<br>marca la<br><em>diferencia.</em></p><p>Tu procedimiento requiere atención en cada fase. Nos ocupamos de las gestiones para que tú puedas centrarte en lo importante.</p><div class="services__index"><span>06</span><small>Servicios.<br>Un mismo compromiso.</small></div></div>
+      <ol class="services__list">${services.map((service, index) => `<li><details class="service"${index === 0 ? ' open' : ''}><summary><span class="service__number" aria-hidden="true">0${index + 1}</span><span class="service__title">${service.title}</span><span class="service__toggle" aria-hidden="true"></span></summary><div class="service__body"><p>${service.description}</p><a class="service__link" href="#contacto" data-service="${service.title}" aria-label="Consultar este servicio: ${service.title.toLowerCase()}">Consultar este servicio ${icon('diagonal')}</a></div></details></li>`).join('')}</ol>
     </div>
     <div data-about></div>
     <div class="territory"><div class="territory__inner section-inner"><div class="territory__heading"><p class="eyebrow">03 / Cerca de donde nos necesitas</p><p>Representación en Palma, Manacor e Inca.<br>Otros partidos judiciales, por encargo.</p></div><p class="territory__word" aria-hidden="true">Mallorca.</p><div class="territory__locations">${['Palma', 'Manacor', 'Inca'].map((place, index) => `<div class="territory__location">${icon('pin')}<strong>${place}</strong><small>0${index + 1}</small></div>`).join('')}</div></div></div>

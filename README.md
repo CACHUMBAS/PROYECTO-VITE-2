@@ -2,7 +2,7 @@
 
 Rediseño académico de [procuradortomas.com](https://www.procuradortomas.com/) con **Vite y componentes JavaScript independientes**, conforme al documento `2_Proyecto_Vite_2.docx`.
 
-Una web de una sola página con dirección editorial mediterránea: tipografía propia de la propuesta, arquitectura conceptual, servicios en filas, presentación del procurador y contacto con contraste. Mantiene el diseño adaptable, la navegación móvil y el formulario que prepara una consulta para WhatsApp.
+Una web de una sola página con el diseño **Umbral**: portada arquitectónica a toda anchura, tipografía de gran formato, tonos carbón, piedra y champán, servicios desplegables y presentación personal del procurador. Mantiene el diseño adaptable, la navegación móvil y el formulario que prepara una consulta para WhatsApp.
 
 El [registro de recursos del rediseño](docs/recursos-redisenyo.md) documenta las decisiones, la imagen generada, su prompt, las fuentes y sus licencias.
 
@@ -55,12 +55,12 @@ src/
   main.js
   assets/                 # Arquitectura conceptual y retrato optimizados; archivo de v1
   components/
-    brand.js              # Marca tipográfica y símbolo reutilizable
+    brand.js              # Marca tipográfica reutilizable
     navbar.js             # Navegación y menú móvil
     section.js            # Contenedor reutilizable
     hero.js               # Portada e información profesional
     about.js              # Retrato, presentación y contacto del procurador
-    services.js           # Servicios, proceso y preguntas frecuentes
+    services.js           # Servicios desplegables, territorio y preguntas frecuentes
     contact-form.js       # Formulario, errores y vista previa
     footer.js             # Marca, enlaces y carácter académico
     icons.js              # Iconos SVG decorativos
@@ -89,8 +89,8 @@ No hay envío automático, servidor de correo, base de datos ni almacenamiento l
 - **Menú móvil**: apertura, cierre al navegar, Escape y devolución del foco al botón.
 - **Anclas**: destino visible debajo de la cabecera; foco en la sección tras navegar.
 - **Perfil del procurador**: acceso desde la portada y mediante `#procurador`, fotografía completa en móvil y enlace al contacto. Se integra en Servicios y conserva los tres apartados principales.
-- **Formulario**: errores y foco, asunto preseleccionado desde tarjetas, vista previa válida e invalidación al editar.
-- **Preguntas frecuentes**: apertura y cierre con controles nativos.
+- **Formulario**: errores y foco, asunto preseleccionado desde el servicio desplegado, vista previa válida e invalidación al editar.
+- **Servicios y preguntas frecuentes**: apertura y cierre con controles nativos; seis servicios, cada uno con acceso a su consulta.
 - **Consola del navegador**: sin errores durante los recorridos comprobados.
 - Revisión independiente del código sin incidencias críticas o importantes.
 
@@ -117,5 +117,6 @@ Repositorio: https://github.com/CACHUMBAS/PROYECTO-VITE-2.git
 - `feat/web-procurador`: primera versión funcional, componentes, lógica, pruebas y documentación.
 - `feat/diseno-editorial`: segunda versión visual, fuentes locales e imagen conceptual optimizada; parte de la primera versión.
 - `feat/seccion-procurador`: componente de presentación con el retrato aportado, imágenes adaptables y enlaces internos; parte del rediseño editorial.
+- `feat/diseno-umbral`: diseño aprobado Umbral, portada inmersiva, servicios desplegables y adaptación de todos los componentes; parte de `feat/seccion-procurador`.
 
 Se trabaja por ramas y commits descriptivos. La rama de la web puede revisarse antes de integrarla en `main`.

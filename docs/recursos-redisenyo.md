@@ -60,3 +60,18 @@ Se han incluido los subconjuntos latinos, que cubren los textos españoles de la
 - Suite de validación y compilación con Vite comprobadas. No se han enviado mensajes al despacho.
 
 La venta o presentación de esta propuesta no equivale a una publicación definitiva. El sitio conserva su identificación académica y `noindex`; la publicación con dominio, los textos definitivos y los datos aprobados por el cliente se prepararían en una fase posterior.
+
+
+## Evolución al diseño Umbral
+
+Rama `feat/diseno-umbral`, basada en `feat/seccion-procurador`. Concepto elegido expresamente por el usuario el 6 de octubre de 2026, tras comparar dos propuestas interactivas.
+
+- Portada a toda anchura con la arquitectura conceptual existente, superposición oscura y titular «Que nada quede al azar.».
+- Cabecera fija con marca tipográfica, enlaces académicos y teléfono. La portada reserva su altura y las anclas tienen margen de desplazamiento.
+- Paleta carbón verdoso `#1e241f`, papel `#f1eee6`, champán `#d8bf8c` y acento oscuro `#726449` para textos sobre fondos claros.
+- Los seis servicios se muestran con `details` y `summary` nativos. El primero está abierto inicialmente; cada uno conserva su enlace con preselección del asunto en el formulario.
+- Perfil, territorio, preguntas frecuentes, contacto, pie e icono de pestaña siguen la misma dirección visual. Textos de apoyo y controles tienen mayor tamaño.
+- Se conservan las imágenes y fuentes locales, el retrato sin retoque, el formulario validado y los tres apartados principales del ejercicio. No se añaden bibliotecas ni servicios externos.
+- La animación de entrada es breve y las transiciones respetan la preferencia de movimiento reducido. La imagen conceptual sigue identificada de forma visible.
+
+La maqueta usada para decidir el diseño no forma parte de la aplicación. El sitio mantiene componentes JavaScript independientes y CSS interno conforme al ejercicio.
