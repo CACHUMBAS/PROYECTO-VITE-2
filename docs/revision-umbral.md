@@ -1,6 +1,6 @@
 # Revisión de Umbral — Procurador Tomás
 
-Fecha: 7 de octubre de 2026. Rama: `feat/pulido-umbral`, basada en `703d074` (`feat/diseno-umbral`).
+Fecha: 7 de octubre de 2026. Revisión inicial: `feat/pulido-umbral`, basada en `703d074` (`feat/diseno-umbral`). Seguimiento: `fix/navegacion-activa`, basada en `03785cd`.
 
 ## Resultado
 
@@ -61,9 +61,24 @@ La revisión toma como referencia las [Web Interface Guidelines de Vercel](https
 
 ## Rendimiento: alcance de la medición
 
-Se han comprobado tamaños de compilación y recursos locales. El JavaScript compilado ocupa aproximadamente 12,72 KB comprimido con gzip y el CSS compartido 1,04 KB. Los estilos internos de los componentes se incluyen en el JavaScript. No se han añadido dependencias de producción.
+Se han comprobado tamaños de compilación y recursos locales. Tras la corrección de navegación, el JavaScript compilado ocupa aproximadamente 12,95 KB comprimido con gzip y el CSS compartido 1,04 KB. Los estilos internos de los componentes se incluyen en el JavaScript. No se han añadido dependencias de producción.
 
 No se ha medido Lighthouse ni Core Web Vitals con una red y dispositivo reales. Tampoco se ha realizado una auditoría completa con lectores de pantalla, Safari o Firefox. Estas comprobaciones quedan como verificación adicional antes de una publicación definitiva.
+
+## Seguimiento: navegación activa
+
+Se reprodujo un fallo: al llegar al formulario mediante desplazamiento, sin pulsar un enlace de navegación, el menú seguía marcando «Inicio». Solo se actualizaba con los cambios del fragmento de la URL.
+
+Ahora `Navbar()` observa las tres secciones principales y actualiza `aria-current` al pasar por una línea situada bajo la cabecera fija. El perfil sigue perteneciendo a Servicios. La posición de observación se recalcula al redimensionar y el desplazamiento no modifica la URL, el historial ni el foco.
+
+Comprobaciones específicas de `fix/navegacion-activa`:
+
+- Llegar al formulario sin ancla activa Contacto; volver al perfil activa Servicios y regresar a la portada activa Inicio.
+- El enlace `#procurador` sigue llevando al perfil y marca Servicios.
+- La navegación a Contacto funciona a 320 px; el menú se cierra al elegir el destino y Escape devuelve el foco al botón.
+- El cambio entre 320 y 1440 px conserva el funcionamiento; no se detectó desbordamiento horizontal a 320 px.
+- Las 7 pruebas del contacto y la compilación vuelven a pasar. La comprobación específica del menú se hizo en el navegador.
+- Revisión independiente del cambio contra `03785cd`: sin incidencias materiales.
 
 ## Pendiente para una publicación comercial
 

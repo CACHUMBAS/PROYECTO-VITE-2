@@ -73,15 +73,38 @@ export function Navbar() {
   });
   window.matchMedia('(min-width: 761px)').addEventListener('change', () => setOpen(false));
 
-  const updateCurrent = () => {
-    const hash = location.hash === '#procurador' ? '#servicios' : location.hash;
+  const navigationLinks = links.querySelectorAll('a[href^="#"]');
+  const setCurrent = (target) => {
+    const hash = target === '#procurador' ? '#servicios' : target;
     const current = ['#inicio', '#servicios', '#contacto'].includes(hash) ? hash : '#inicio';
-    links.querySelectorAll('a[href^="#"]').forEach((link) => {
+    navigationLinks.forEach((link) => {
       if (link.getAttribute('href') === current) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     });
   };
+  const updateCurrent = () => setCurrent(location.hash);
   window.addEventListener('hashchange', updateCurrent);
   updateCurrent();
+
+  // Observamos una línea bajo la cabecera: el menú sigue la lectura sin
+  // modificar la URL, el historial ni el foco al desplazar la página.
+  let sectionObserver;
+  let resizeFrame;
+  const observeSections = () => {
+    sectionObserver?.disconnect();
+    const readingLine = Math.min(header.getBoundingClientRect().height + 24, Math.floor(window.innerHeight / 2));
+    const bottomMargin = Math.max(0, window.innerHeight - readingLine - 1);
+    sectionObserver = new IntersectionObserver((entries) => {
+      const entered = entries.filter((entry) => entry.isIntersecting);
+      if (entered.length) setCurrent(`#${entered.at(-1).target.id}`);
+    }, { rootMargin: `-${readingLine}px 0px -${bottomMargin}px 0px` });
+    document.querySelectorAll('main > .page-section').forEach((section) => sectionObserver.observe(section));
+  };
+  const scheduleObservation = () => {
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(observeSections);
+  };
+  window.addEventListener('resize', scheduleObservation, { passive: true });
+  scheduleObservation();
   return header;
 }

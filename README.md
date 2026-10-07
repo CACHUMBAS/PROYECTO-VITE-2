@@ -90,6 +90,7 @@ No hay envío automático, servidor de correo, base de datos ni almacenamiento l
 - **Navegador a 1440, 1024, 768, 390 y 320 px**: sin desbordamiento horizontal, imágenes cargadas, secciones en orden.
 - **Menú móvil**: apertura, cierre al navegar, Escape y devolución del foco al botón.
 - **Anclas**: destino visible debajo de la cabecera; foco en la sección tras navegar.
+- **Sección activa**: el menú sigue el desplazamiento entre Inicio, Servicios y Contacto; el perfil pertenece a Servicios. No altera la URL ni mueve el foco al actualizar el indicador.
 - **Perfil del procurador**: acceso desde la portada y mediante `#procurador`, fotografía completa en móvil y enlace al contacto. Se integra en Servicios y conserva los tres apartados principales.
 - **Formulario**: errores y foco, asunto preseleccionado desde el servicio desplegado, vista previa válida e invalidación al editar.
 - **Servicios y preguntas frecuentes**: apertura y cierre con controles nativos; seis servicios, cada uno con acceso a su consulta.
@@ -121,5 +122,6 @@ Repositorio: https://github.com/CACHUMBAS/PROYECTO-VITE-2.git
 - `feat/seccion-procurador`: componente de presentación con el retrato aportado, imágenes adaptables y enlaces internos; parte del rediseño editorial.
 - `feat/diseno-umbral`: diseño aprobado Umbral, portada inmersiva, servicios desplegables y adaptación de todos los componentes; parte de `feat/seccion-procurador`.
 - `feat/pulido-umbral`: revisión frente al ejercicio, perfil y cobertura refinados, lectura en tablet, ajustes de accesibilidad y miniatura de portada optimizada.
+- `fix/navegacion-activa`: corrige el indicador del menú al desplazarse sin pulsar enlaces; parte de `feat/pulido-umbral`.
 
 Se trabaja por ramas y commits descriptivos. La rama de la web puede revisarse antes de integrarla en `main`.
