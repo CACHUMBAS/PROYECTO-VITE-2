@@ -75,3 +75,10 @@ Rama `feat/diseno-umbral`, basada en `feat/seccion-procurador`. Concepto elegido
 - La animación de entrada es breve y las transiciones respetan la preferencia de movimiento reducido. La imagen conceptual sigue identificada de forma visible.
 
 La maqueta usada para decidir el diseño no forma parte de la aplicación. El sitio mantiene componentes JavaScript independientes y CSS interno conforme al ejercicio.
+
+
+## Pulido y revisión de Umbral — 7 de octubre de 2026
+
+La rama `feat/pulido-umbral` conserva la dirección aprobada y mejora el perfil, la cobertura y la lectura del formulario. El informe `docs/revision-umbral.md` registra las pruebas y la correspondencia con el enunciado.
+
+Se incorpora `src/assets/gabriel-tomas-gili-mini.webp`, 160 × 156 px y 5.286 bytes, exclusivamente para la pequeña tarjeta de portada. Procede del retrato ya facilitado: solo se ha redimensionado y comprimido mediante la biblioteca disponible en el entorno, sin retoque generativo ni instalación de dependencias en el proyecto. Las imágenes de 600 y 1100 px permanecen para la sección del procurador.

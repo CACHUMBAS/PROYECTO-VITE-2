@@ -11,7 +11,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 108px; }
 body { margin: 0; }
 button, input, select, textarea { font: inherit; }
-button, a { touch-action: manipulation; }
+button, a, summary { touch-action: manipulation; }
 a { color: inherit; text-underline-offset: .25em; }
 button { cursor: pointer; }
 img, svg { max-width: 100%; }

@@ -2,7 +2,7 @@ import { site } from '../data/site.js';
 import { icon } from './icons.js';
 import architecture from '../assets/arquitectura-mediterranea.webp';
 import architectureSmall from '../assets/arquitectura-mediterranea-720.webp';
-import portraitSmall from '../assets/gabriel-tomas-gili-600.webp';
+import portraitThumbnail from '../assets/gabriel-tomas-gili-mini.webp';
 
 export function Hero() {
   const root = document.createElement('div');
@@ -68,7 +68,7 @@ export function Hero() {
         <span class="hero__location" aria-hidden="true">PALMA · MANACOR · INCA</span>
         <div class="hero__bottom">
           <div class="hero__signature"><small>${site.professional}</small><p>Rigor profesional.<br>Trato personal.</p></div>
-          <a class="hero__profile" href="#procurador"><img src="${portraitSmall}" width="66" height="74" alt="" /><span>Conoce a<br>tu procurador</span>${icon('diagonal')}</a>
+          <a class="hero__profile" href="#procurador"><img src="${portraitThumbnail}" width="66" height="74" decoding="async" alt="" /><span>Conoce a<br>tu procurador</span>${icon('diagonal')}</a>
         </div>
         <p class="hero__caption">Arquitectura mediterránea · Imagen conceptual</p>
       </div>

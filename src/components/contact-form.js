@@ -25,14 +25,17 @@ export function ContactForm() {
       .contact__channels strong { display: block; font-size: 13px; font-weight: 400; color: #f1eee6; }
       .contact__note { border-top: 1px solid #777b69; padding-top: 23px; margin-top: 33px; font-size: 12px; color: #d8d3c7; max-width: 365px; }
       .contact__note .icon { width: 15px; height: 15px; margin-right: 4px; }
-      .consultation { background: var(--paper); color: var(--ink); padding: 38px; min-width: 0; }
+      .consultation { color-scheme: light; border-top: 3px solid var(--champagne); background: var(--paper); color: var(--ink); padding: 38px; min-width: 0; }
+      .consultation__steps { display: flex; flex-wrap: wrap; gap: 14px 24px; margin: 0 0 27px; padding: 0 0 20px; list-style: none; border-bottom: 1px solid var(--line); font-size: 11px; color: var(--muted); }
+      .consultation__steps li { display: flex; align-items: center; gap: 8px; }
+      .consultation__steps span { color: var(--accent); font-variant-numeric: tabular-nums; }
       .consultation h3 { font: 400 35px/1.1 var(--serif); letter-spacing: -.03em; }
       .consultation__intro { color: var(--muted); font-size: 12px; margin: 12px 0 25px; }
       .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
       .form-field { margin-bottom: 20px; min-width: 0; }
       .form-field label { display: block; font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
       .form-field label span { color: var(--muted); font-weight: 400; }
-      .form-field input, .form-field select, .form-field textarea { display: block; width: 100%; min-width: 0; border: 0; border-bottom: 1px solid #a8a18e; border-radius: 0; background: transparent; color: var(--ink); padding: 12px 0; min-height: 45px; font-size: 14px; }
+      .form-field input, .form-field select, .form-field textarea { display: block; width: 100%; min-width: 0; border: 0; border-bottom: 1px solid #81796a; border-radius: 0; background: var(--paper); color: var(--ink); padding: 12px 0; min-height: 45px; font-size: 16px; }
       .form-field select { padding-right: 20px; }
       .form-field :is(input, select, textarea):focus-visible { outline-offset: 3px; }
       .form-field select option { background: var(--paper); color: var(--ink); }
@@ -54,6 +57,12 @@ export function ContactForm() {
       .consultation__message { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; line-height: 1.6; margin: 15px 0; padding: 16px; background: #e7e2d7; }
       .consultation__preview .button { width: 100%; font-size: 13px; gap: 12px; }
       @media (max-width: 1100px) { .contact__inner { gap: 45px; } .consultation { padding: 30px; } .form-row { grid-template-columns: 1fr; gap: 0; } }
+      @media (max-width: 900px) {
+        .contact__inner { grid-template-columns: minmax(0, 1fr); }
+        .contact__copy { max-width: 620px; }
+        .contact__intro { max-width: 480px; }
+        .consultation { max-width: 650px; width: 100%; }
+      }
       @media (max-width: 760px) {
         .contact__inner { grid-template-columns: 1fr; padding-block: 46px 50px; gap: 36px; }
         .contact__copy { padding-top: 0; }
@@ -80,6 +89,7 @@ export function ContactForm() {
         <p class="contact__note">${icon('pin')} Palma, Manacor e Inca.<br>Para otros partidos judiciales, consulta la disponibilidad.</p>
       </div>
       <form class="consultation" novalidate aria-labelledby="form-title">
+        <ol class="consultation__steps" aria-label="Cómo realizar tu consulta"><li><span aria-hidden="true">01</span>Prepara tu consulta</li><li><span aria-hidden="true">02</span>Revisa y envía en WhatsApp</li></ol>
         <h3 id="form-title">¿En qué podemos ayudarte?</h3>
         <p class="consultation__intro">Prepara tu consulta y revísala en WhatsApp antes de enviarla. Todos los campos son obligatorios salvo el correo.</p>
         <div class="form-row">
@@ -147,7 +157,7 @@ export function ContactForm() {
     preview.focus();
   });
 
-  // Un evento explícito evita acoplar las tarjetas al HTML interno del formulario.
+  // Un evento explícito evita acoplar los enlaces de servicio al HTML del formulario.
   document.addEventListener('service-selected', (event) => {
     if (!subjects.includes(event.detail)) return;
     form.elements.namedItem('subject').value = event.detail;

@@ -17,7 +17,7 @@ export function Footer() {
       .footer__wordmark { font: 400 clamp(100px, 20vw, 290px)/.98 var(--serif); text-align: center; letter-spacing: .07em; margin: 23px -15px 30px 0; }
       .footer__bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-block: 23px; font-size: 11px; color: var(--muted); }
       .footer__links { display: flex; flex-wrap: wrap; gap: 20px; }
-      .footer__links a { text-decoration: none; }
+      .footer__links a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
       .footer__links a:hover { text-decoration: underline; }
       @media (max-width: 760px) { .footer__top { padding-top: 34px; gap: 22px; } .footer__motto { display: none; } .footer__up span { display: none; } .footer__wordmark { font-size: clamp(90px, 21vw, 140px); margin-block: 30px 27px; margin-right: -5px; letter-spacing: .025em; } .footer__bottom { font-size: 11px; gap: 14px; } .footer__links { gap: 13px; } }
     </style>

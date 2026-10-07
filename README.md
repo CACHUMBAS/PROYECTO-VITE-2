@@ -6,6 +6,8 @@ Una web de una sola página con el diseño **Umbral**: portada arquitectónica a
 
 El [registro de recursos del rediseño](docs/recursos-redisenyo.md) documenta las decisiones, la imagen generada, su prompt, las fuentes y sus licencias.
 
+La [revisión de Umbral](docs/revision-umbral.md) contrasta los requisitos del documento original, registra las últimas mejoras y distingue lo verificado de lo pendiente para una publicación comercial.
+
 ## Ejecutar
 
 Entorno comprobado: Node.js **24.16.0**, npm **11.13.0** y Vite **8.3.3**.
@@ -118,5 +120,6 @@ Repositorio: https://github.com/CACHUMBAS/PROYECTO-VITE-2.git
 - `feat/diseno-editorial`: segunda versión visual, fuentes locales e imagen conceptual optimizada; parte de la primera versión.
 - `feat/seccion-procurador`: componente de presentación con el retrato aportado, imágenes adaptables y enlaces internos; parte del rediseño editorial.
 - `feat/diseno-umbral`: diseño aprobado Umbral, portada inmersiva, servicios desplegables y adaptación de todos los componentes; parte de `feat/seccion-procurador`.
+- `feat/pulido-umbral`: revisión frente al ejercicio, perfil y cobertura refinados, lectura en tablet, ajustes de accesibilidad y miniatura de portada optimizada.
 
 Se trabaja por ramas y commits descriptivos. La rama de la web puede revisarse antes de integrarla en `main`.

@@ -29,7 +29,7 @@ export function Navbar() {
         .navbar__toggle { display: block; }
         .navbar__brand .brand strong { font-size: 30px; }
         .navbar__brand .brand small { font-size: 8px; margin-top: 8px; }
-        .navbar__links { display: none; position: absolute; left: 0; right: 0; top: 100%; padding: 12px 24px 25px; flex-direction: column; align-items: stretch; gap: 0; background: var(--ink); border-bottom: 1px solid #ffffff40; box-shadow: 0 20px 25px #14181526; max-height: calc(100dvh - 82px); overflow-y: auto; }
+        .navbar__links { display: none; position: absolute; left: 0; right: 0; top: 100%; padding: 12px 24px 25px; flex-direction: column; align-items: stretch; gap: 0; background: var(--ink); border-bottom: 1px solid #ffffff40; box-shadow: 0 20px 25px #14181526; max-height: calc(100dvh - 82px); overflow-y: auto; overscroll-behavior: contain; }
         .navbar__links[data-open='true'] { display: flex; }
         .navbar__links > a { padding: 15px 0; font-size: 27px; font-family: var(--serif); border-bottom: 1px solid #ffffff30; }
         .navbar__links > a[aria-current]::after { bottom: 8px; }
