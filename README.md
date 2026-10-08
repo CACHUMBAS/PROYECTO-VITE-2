@@ -118,7 +118,7 @@ Datos e imágenes consultados el **6 de octubre de 2026**:
 
 Los recursos originales de la primera versión se conservan como archivo, pero el rediseño actual usa una imagen conceptual generada, una nueva composición de la marca y el retrato facilitado por el usuario para presentar a Gabriel Tomás Gili. Véase el registro de recursos para la procedencia y el prompt. Los enlaces legales remiten explícitamente a la web original. Antes de una publicación comercial habría que confirmar los permisos de los recursos, actualizar la información profesional y preparar los textos legales de esa publicación. No se incluyen testimonios, cifras de experiencia ni garantías de resultados inventadas.
 
-Esta entrega es un prototipo académico local, identificado en el pie y marcado `noindex`. No se ha desplegado un sitio público ni conectado un servicio de correo.
+Esta entrega es una propuesta académica, identificada en el pie y marcada `noindex`. Se ha preparado su publicación de vista previa en Vercel; el formulario mantiene su funcionamiento mediante WhatsApp y no incorpora un servidor de correo.
 
 ## Git
 
@@ -136,3 +136,11 @@ Repositorio: https://github.com/CACHUMBAS/PROYECTO-VITE-2.git
 - `feat/animaciones-umbral`: acabado de movimiento, foco y preferencias de accesibilidad; parte de `fix/navegacion-activa`.
 
 Se trabaja por ramas y commits descriptivos. La rama de la web puede revisarse antes de integrarla en `main`.
+
+## Publicación en Vercel
+
+Proyecto existente: `procudador-toma`, equipo `cachumbas1`, conectado al repositorio de GitHub. La rama `chore/despliegue-vercel` contiene la web completa y su configuración de despliegue; parte de `feat/animaciones-umbral`.
+
+`vercel.json` declara Vite, instalación con `npm ci`, compilación con `npm run build` y salida `dist`. No se requieren variables de entorno para esta web. La vinculación local en `.vercel/` se excluye de Git.
+
+Los cambios en ramas distintas de la rama de producción generan vistas previas mediante la integración con GitHub. La rama `main` conserva la preparación inicial: no debe confundirse con la versión completa de esta rama. Promover la web completa a producción o integrarla en `main` es un paso independiente.

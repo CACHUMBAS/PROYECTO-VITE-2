@@ -13,3 +13,6 @@ dist/
 # Archivos del sistema
 .DS_Store
 Thumbs.db
+
+# Vinculación local de Vercel
+.vercel/
