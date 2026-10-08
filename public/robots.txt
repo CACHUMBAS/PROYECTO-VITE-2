@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://procudador-toma.vercel.app/sitemap.xml

@@ -118,7 +118,7 @@ Datos e imágenes consultados el **6 de octubre de 2026**:
 
 Los recursos originales de la primera versión se conservan como archivo, pero el rediseño actual usa una imagen conceptual generada, una nueva composición de la marca y el retrato facilitado por el usuario para presentar a Gabriel Tomás Gili. Véase el registro de recursos para la procedencia y el prompt. Los enlaces legales remiten explícitamente a la web original. Antes de una publicación comercial habría que confirmar los permisos de los recursos, actualizar la información profesional y preparar los textos legales de esa publicación. No se incluyen testimonios, cifras de experiencia ni garantías de resultados inventadas.
 
-Esta entrega es una propuesta académica, identificada en el pie y marcada `noindex`. Se ha preparado su publicación de vista previa en Vercel; el formulario mantiene su funcionamiento mediante WhatsApp y no incorpora un servidor de correo.
+Esta entrega es una propuesta académica, identificada en el pie. Se ha habilitado la indexación de su publicación pública en Vercel; el formulario mantiene su funcionamiento mediante WhatsApp y no incorpora un servidor de correo.
 
 ## Git
 
@@ -143,4 +143,7 @@ Proyecto existente: `procudador-toma`, equipo `cachumbas1`, conectado al reposit
 
 `vercel.json` declara Vite, instalación con `npm ci`, compilación con `npm run build` y salida `dist`. No se requieren variables de entorno para esta web. La vinculación local en `.vercel/` se excluye de Git.
 
-Los cambios en ramas distintas de la rama de producción generan vistas previas mediante la integración con GitHub. La rama `main` conserva la preparación inicial: no debe confundirse con la versión completa de esta rama. Promover la web completa a producción o integrarla en `main` es un paso independiente.
+Los cambios en ramas distintas de la rama de producción generan vistas previas mediante la integración con GitHub. La rama `main` conserva la preparación inicial: no debe confundirse con la versión completa de esta rama. La rama `feat/publicacion-publica`, basada en `chore/despliegue-vercel`, habilita la indexación y se publica en producción de forma explícita. Los futuros cambios de las ramas de trabajo siguen generando vistas previas; actualizar producción requiere promover su despliegue o integrarlos en la rama de producción.
+Dirección pública de producción: https://procudador-toma.vercel.app/
+
+Se incluyen URL canónica, metadatos para compartir, `public/robots.txt` y `public/sitemap.xml`. La etiqueta `noindex` se ha sustituido por `index, follow` a petición del usuario. Esto permite el rastreo, pero no garantiza aparecer en Google ni una posición determinada. No se ha solicitado indexación desde Google Search Console.
