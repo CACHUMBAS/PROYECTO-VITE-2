@@ -59,6 +59,7 @@ src/
   components/
     brand.js              # Marca tipográfica reutilizable
     navbar.js             # Navegación y menú móvil
+    motion.js             # Entradas suaves y preferencias de movimiento
     section.js            # Contenedor reutilizable
     hero.js               # Portada e información profesional
     about.js              # Retrato, presentación y contacto del procurador
@@ -72,6 +73,14 @@ src/
 tests/contact.test.js
 docs/superpowers/         # Especificación y plan de trabajo
 ```
+
+## Animaciones de Umbral
+
+Entradas suaves de 680 ms al llegar a los bloques y una breve secuencia por líneas en el titular. Servicios y preguntas frecuentes incorporan una transición de apertura de 280 ms; botones y flechas responden al puntero y al foco. Los bloques se animan una sola vez por carga, sin alterar el desplazamiento del navegador.
+
+El acabado vive en `src/components/motion.js`, con sus estilos internos, y se inicia después de montar los componentes. Usa las API del navegador, sin dependencias nuevas. Si no hay soporte, el contenido permanece visible. La preferencia de movimiento reducido se atiende al cargar y al cambiarla; al enfocar un bloque se cancela su entrada para mantenerlo legible.
+
+Las 7 pruebas del contacto y la compilación pasan. La inspección visual de esta última rama quedó pendiente: la herramienta de navegador no pudo arrancar por un fallo de su entorno aislado. Las comprobaciones de navegador del apartado siguiente corresponden a las ramas anteriores.
 
 ## Funcionamiento del contacto
 
@@ -123,5 +132,7 @@ Repositorio: https://github.com/CACHUMBAS/PROYECTO-VITE-2.git
 - `feat/diseno-umbral`: diseño aprobado Umbral, portada inmersiva, servicios desplegables y adaptación de todos los componentes; parte de `feat/seccion-procurador`.
 - `feat/pulido-umbral`: revisión frente al ejercicio, perfil y cobertura refinados, lectura en tablet, ajustes de accesibilidad y miniatura de portada optimizada.
 - `fix/navegacion-activa`: corrige el indicador del menú al desplazarse sin pulsar enlaces; parte de `feat/pulido-umbral`.
+
+- `feat/animaciones-umbral`: acabado de movimiento, foco y preferencias de accesibilidad; parte de `fix/navegacion-activa`.
 
 Se trabaja por ramas y commits descriptivos. La rama de la web puede revisarse antes de integrarla en `main`.

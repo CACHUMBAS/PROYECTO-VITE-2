@@ -5,6 +5,7 @@ import { Hero } from './components/hero.js';
 import { Services } from './components/services.js';
 import { ContactForm } from './components/contact-form.js';
 import { Footer } from './components/footer.js';
+import { initMotion } from './components/motion.js';
 
 const app = document.querySelector('#app');
 const inicio = Section({ id: 'inicio', contenido: Hero() });
@@ -30,3 +31,7 @@ app.addEventListener('click', (event) => {
 if (['#inicio', '#servicios', '#procurador', '#contacto'].includes(location.hash)) {
   requestAnimationFrame(() => document.querySelector(location.hash)?.scrollIntoView());
 }
+
+// Animaciones opcionales, después de montar el contenido y resolver las anclas.
+const disposeMotion = initMotion(app);
+if (import.meta.hot) import.meta.hot.dispose(disposeMotion);

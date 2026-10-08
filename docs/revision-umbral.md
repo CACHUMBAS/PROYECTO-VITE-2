@@ -80,6 +80,19 @@ Comprobaciones específicas de `fix/navegacion-activa`:
 - Las 7 pruebas del contacto y la compilación vuelven a pasar. La comprobación específica del menú se hizo en el navegador.
 - Revisión independiente del cambio contra `03785cd`: sin incidencias materiales.
 
+## Acabado de movimiento — 8 de octubre de 2026
+
+Rama `feat/animaciones-umbral`, basada en `64a5713`. Se incorpora `src/components/motion.js` y su inicialización en `main.js`.
+
+- Entradas de 680 ms mediante opacidad y desplazamiento de 18 px; líneas del titular separadas por 90 ms. Cada bloque se anima una sola vez por carga.
+- Observación 32 px antes de entrar en pantalla para iniciar la transición antes de que aparezca el borde del bloque.
+- Apertura breve de los servicios y las preguntas frecuentes, y respuesta de botones y flechas al puntero o al foco.
+- Sin ocultación permanente por CSS: la ausencia de soporte deja el contenido visible. Se cancelan las entradas al enfocar el contenido o al activar movimiento reducido; se desconectan observadores y eventos al desmontar.
+- Sin dependencias nuevas. Compilación: JavaScript de aproximadamente 13,92 KB gzip y CSS compartido de 1,04 KB gzip.
+- Pasan las 7 pruebas del contacto, la comprobación de sintaxis y la compilación de Vite.
+
+La comprobación visual de las animaciones no se ha podido realizar: la herramienta de navegador falla al iniciar por un problema de su entorno aislado. No se atribuyen a esta rama las pruebas visuales de las revisiones anteriores. La página queda disponible localmente para revisar el acabado.
+
 ## Pendiente para una publicación comercial
 
 1. Confirmar con el despacho el contenido profesional definitivo y el uso comercial de los recursos.
