@@ -153,3 +153,13 @@ Se incluyen URL canónica, metadatos para compartir, `public/robots.txt` y `publ
 En `feat/portada-procurador-justicia`, el titular pasa a «Procurador Tomás» y el fondo muestra una balanza de justicia en bronce, generada para mantener los tonos de Umbral. Se ajusta el tamaño del nombre en móvil y se sirven dos versiones WebP de 69 KB y 22 KB. El [registro de recursos](docs/recursos-redisenyo.md) conserva procedencia, prompt y dimensiones.
 
 Verificado: 7 pruebas, compilación Vite e inspección de portada en 320/390/768/1440 px sin desbordamiento observado. Cambio preparado en rama y vista previa; promoción a producción pendiente.
+
+## Contacto y ventajas en portada — 20 de octubre de 2026
+
+La rama `feat/portada-contacto-ventajas` parte de `feat/portada-procurador-justicia` y aplica tres mejoras al componente Hero:
+
+- Botón «Consultar mi asunto», en champán, con acceso a `#contacto`; «Ver servicios» conserva el acceso secundario a `#servicios`.
+- Descripción directa de la representación procesal en Palma, Manacor e Inca y de la atención a particulares y abogados.
+- Franja de control de plazos, comunicación directa y seguimiento del asunto, con separadores finos y distribución vertical en móvil.
+
+Conserva la imagen de justicia, las fuentes, los colores y las tres secciones de Umbral. No añade dependencias ni modifica el envío de consultas. Verificado en 320/390/768/1024/1440 px sin desbordamiento horizontal, navegación de los dos accesos con foco en sus destinos y consola sin errores durante la revisión. Las 7 pruebas existentes y la compilación Vite pasan. La integración de GitHub genera una vista previa de la rama; la promoción a producción es un paso independiente.
