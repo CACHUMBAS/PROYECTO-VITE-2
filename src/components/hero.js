@@ -1,7 +1,7 @@
 import { site } from '../data/site.js';
 import { icon } from './icons.js';
-import architecture from '../assets/arquitectura-mediterranea.webp';
-import architectureSmall from '../assets/arquitectura-mediterranea-720.webp';
+import justice from '../assets/balanza-justicia.webp';
+import justiceSmall from '../assets/balanza-justicia-720.webp';
 import portraitThumbnail from '../assets/gabriel-tomas-gili-mini.webp';
 
 export function Hero() {
@@ -16,9 +16,10 @@ export function Hero() {
       .hero__copy { padding-bottom: 46px; }
       .hero__overline { display: flex; align-items: center; gap: 14px; color: var(--champagne); margin-bottom: 30px; }
       .hero__overline::before { content: ''; width: 28px; height: 1px; background: currentColor; flex-shrink: 0; }
-      .hero h1 { font: 400 clamp(88px, 9.2vw, 132px)/.81 var(--serif); letter-spacing: -.055em; }
+      .hero h1 { font: 400 clamp(76px, 8.6vw, 124px)/.96 var(--serif); letter-spacing: -.055em; }
       .hero h1 span { display: block; }
-      .hero h1 em { color: var(--champagne); font-weight: 400; }
+      .hero h1 span + span { margin-top: .06em; }
+      .hero h1 em { color: var(--champagne); font-size: 1.32em; font-weight: 400; }
       .hero__description { color: #e8e2d6; font-size: 15px; line-height: 1.7; margin-top: 31px; }
       .hero__discover { display: inline-flex; align-items: center; gap: 30px; padding-block: 16px 12px; margin-top: 10px; border-bottom: 1px solid #b6a888; font-size: 13px; text-decoration: none; }
       .hero__discover .icon { width: 18px; height: 18px; transform: rotate(90deg); transition: translate .25s; }
@@ -39,10 +40,10 @@ export function Hero() {
       @media (max-width: 760px) {
         .hero__inner { min-height: 0; padding-top: 126px; padding-bottom: 23px; }
         .hero::before { background: linear-gradient(90deg, #141815e8, #1418158f 72%, #14181566), linear-gradient(0deg, #141815ed, transparent 60%); }
-        .hero__visual img { object-position: 65% center; }
+        .hero__visual img { object-position: 73% center; }
         .hero__overline { max-width: 280px; font-size: 10px; gap: 10px; margin-bottom: 26px; }
         .hero__overline::before { width: 20px; }
-        .hero h1 { font-size: clamp(68px, 20vw, 110px); }
+        .hero h1 { font-size: clamp(48px, 14.2vw, 96px); }
         .hero__description { font-size: 14px; margin-top: 28px; }
         .hero__discover { font-size: 12px; gap: 16px; }
         .hero__copy { padding-bottom: 38px; }
@@ -57,11 +58,11 @@ export function Hero() {
       }
     </style>
     <div class="hero">
-      <figure class="hero__visual"><img src="${architecture}" srcset="${architectureSmall} 720w, ${architecture} 1200w" sizes="100vw" alt="Composición arquitectónica conceptual de arcos mediterráneos de piedra bañados por la luz" width="1200" height="800" fetchpriority="high" /></figure>
+      <figure class="hero__visual"><img src="${justice}" srcset="${justiceSmall} 720w, ${justice} 1536w" sizes="100vw" alt="Imagen conceptual de una balanza de justicia en bronce sobre un escritorio, iluminada por una ventana" width="1536" height="1024" fetchpriority="high" /></figure>
       <div class="hero__inner section-inner">
         <div class="hero__copy">
           <p class="hero__overline eyebrow">Representación procesal en Mallorca</p>
-          <h1 id="inicio-title"><span>Que nada</span><span>quede</span><span><em>al azar.</em></span></h1>
+          <h1 id="inicio-title"><span>Procurador</span> <span><em>Tomás</em></span></h1>
           <p class="hero__description">Cada gestión tiene un momento.<br>Cada procedimiento, a alguien detrás.</p>
           <a class="hero__discover" href="#servicios">Descubre cómo te acompañamos ${icon('arrow')}</a>
         </div>
@@ -70,7 +71,7 @@ export function Hero() {
           <div class="hero__signature"><small>${site.professional}</small><p>Rigor profesional.<br>Trato personal.</p></div>
           <a class="hero__profile" href="#procurador"><img src="${portraitThumbnail}" width="66" height="74" decoding="async" alt="" /><span>Conoce a<br>tu procurador</span>${icon('diagonal')}</a>
         </div>
-        <p class="hero__caption">Arquitectura mediterránea · Imagen conceptual</p>
+        <p class="hero__caption">Balanza de justicia · Imagen conceptual</p>
       </div>
     </div>
     <div class="section-inner"><div class="hero__foot"><span>Bienvenida al sitio</span><span>Palma · Manacor · Inca</span></div></div>`;

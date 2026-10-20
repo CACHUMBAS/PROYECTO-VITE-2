@@ -82,3 +82,21 @@ La maqueta usada para decidir el diseño no forma parte de la aplicación. El si
 La rama `feat/pulido-umbral` conserva la dirección aprobada y mejora el perfil, la cobertura y la lectura del formulario. El informe `docs/revision-umbral.md` registra las pruebas y la correspondencia con el enunciado.
 
 Se incorpora `src/assets/gabriel-tomas-gili-mini.webp`, 160 × 156 px y 5.286 bytes, exclusivamente para la pequeña tarjeta de portada. Procede del retrato ya facilitado: solo se ha redimensionado y comprimido mediante la biblioteca disponible en el entorno, sin retoque generativo ni instalación de dependencias en el proyecto. Las imágenes de 600 y 1100 px permanecen para la sección del procurador.
+
+
+## Portada con balanza de justicia — 20 de octubre de 2026
+
+Rama `feat/portada-procurador-justicia`, desde `29f20a7` (`feat/publicacion-publica`). Cambio solicitado por el usuario: sustituir «Que nada quede al azar.» por «Procurador Tomás» y utilizar un fondo profesional relacionado con la justicia. Se conserva Umbral, el retrato y los componentes existentes.
+
+Nueva imagen conceptual generada con la herramienta integrada **image_gen**. No representa el despacho ni un juzgado real. Se mantienen un texto alternativo descriptivo y la indicación visible «Balanza de justicia · Imagen conceptual». No se utiliza la API por CLI ni se instalan dependencias. El original generado permanece fuera de Git; las versiones del sitio están dentro del proyecto:
+
+- `src/assets/balanza-justicia.webp`: 1536 × 1024, 69 064 bytes.
+- `src/assets/balanza-justicia-720.webp`: 720 × 480, 22 260 bytes.
+
+Conversión WebP mediante Sharp ya disponible en el entorno, sin alterar el contenido de la imagen. `srcset`, dimensiones explícitas y prioridad de carga alta. El nombre se compone en dos líneas con tamaño adaptable; se conserva el movimiento reducido existente.
+
+Prompt exacto:
+
+> Use case: photorealistic-natural. Asset type: full-width hero background photograph for Procurador Tomás, an elegant Spanish legal representative's website, existing Umbral art direction in charcoal green, warm stone and restrained champagne bronze. Create ONE wide landscape image, aspect ratio 3:2, high-resolution 1536x1024 or larger. Scene: a quiet, refined legal office, dark green-charcoal plaster wall, subtle out-of-focus stone architectural recess at the far right and a dark walnut desk. Main subject: one beautifully crafted professional bronze balance of justice, structurally accurate with two symmetrical shallow circular pans suspended by fine chains from the ends of a level horizontal beam, a slender central support and stable bronze base. The full balance is visible and upright, occupying the right half of the frame, centered around x=72%, leaving the left 48% as clean dark negative space for website text which will be added in HTML. Balance from y=18% to y=85% with breathing room above and below. One softly blurred closed leather legal volume may rest on the desk; no readable titles. Style: premium editorial still-life photography, tactile subtly aged bronze, sophisticated quiet authority, natural soft directional window light from upper right, luminous metal edges and rich shadows, realistic optical depth, no glowing digital effects. Palette: muted bronze/champagne, dark desaturated olive-charcoal, walnut, ivory light. Do not include people, gavels, courtroom insignia, emblems, flags, lettering, typography, logos, watermarks, borders or website interface. This is a conceptual symbolic scene, not a photograph of an identified office or real court. Only the photograph; not a mockup.
+
+Validación: 7/7 pruebas existentes y `npm run build` correctos. Portada inspeccionada en 320, 390, 768 y 1440 px; titular dentro del ancho, fondo cargado y sin desbordamiento horizontal observado. Capturas de móvil y escritorio revisadas; registro de errores del navegador vacío durante esta comprobación. No se han enviado consultas reales. La rama de trabajo genera una vista previa por GitHub; este cambio aún no está promovido a producción.

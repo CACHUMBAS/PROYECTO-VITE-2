@@ -2,7 +2,7 @@
 
 Rediseño académico de [procuradortomas.com](https://www.procuradortomas.com/) con **Vite y componentes JavaScript independientes**, conforme al documento `2_Proyecto_Vite_2.docx`.
 
-Una web de una sola página con el diseño **Umbral**: portada arquitectónica a toda anchura, tipografía de gran formato, tonos carbón, piedra y champán, servicios desplegables y presentación personal del procurador. Mantiene el diseño adaptable, la navegación móvil y el formulario que prepara una consulta para WhatsApp.
+Una web de una sola página con el diseño **Umbral**: portada con una balanza de justicia a toda anchura, tipografía de gran formato, tonos carbón, piedra y champán, servicios desplegables y presentación personal del procurador. Mantiene el diseño adaptable, la navegación móvil y el formulario que prepara una consulta para WhatsApp.
 
 El [registro de recursos del rediseño](docs/recursos-redisenyo.md) documenta las decisiones, la imagen generada, su prompt, las fuentes y sus licencias.
 
@@ -55,7 +55,7 @@ public/favicon.svg
 public/fonts/             # WOFF2 locales y licencias OFL
 src/
   main.js
-  assets/                 # Arquitectura conceptual y retrato optimizados; archivo de v1
+  assets/                 # Balanza conceptual y retrato optimizados; recursos anteriores archivados
   components/
     brand.js              # Marca tipográfica reutilizable
     navbar.js             # Navegación y menú móvil
@@ -80,7 +80,7 @@ Entradas suaves de 680 ms al llegar a los bloques y una breve secuencia por lín
 
 El acabado vive en `src/components/motion.js`, con sus estilos internos, y se inicia después de montar los componentes. Usa las API del navegador, sin dependencias nuevas. Si no hay soporte, el contenido permanece visible. La preferencia de movimiento reducido se atiende al cargar y al cambiarla; al enfocar un bloque se cancela su entrada para mantenerlo legible.
 
-Las 7 pruebas del contacto y la compilación pasan. La inspección visual de esta última rama quedó pendiente: la herramienta de navegador no pudo arrancar por un fallo de su entorno aislado. Las comprobaciones de navegador del apartado siguiente corresponden a las ramas anteriores.
+Las 7 pruebas del contacto y la compilación pasan. La inspección visual de la rama de animaciones quedó pendiente en aquella sesión: la herramienta de navegador no pudo arrancar por un fallo de su entorno aislado. Las comprobaciones de navegador del apartado siguiente corresponden a las ramas anteriores.
 
 ## Funcionamiento del contacto
 
@@ -147,3 +147,9 @@ Los cambios en ramas distintas de la rama de producción generan vistas previas 
 Dirección pública de producción: https://procudador-toma.vercel.app/
 
 Se incluyen URL canónica, metadatos para compartir, `public/robots.txt` y `public/sitemap.xml`. La etiqueta `noindex` se ha sustituido por `index, follow` a petición del usuario. Esto permite el rastreo, pero no garantiza aparecer en Google ni una posición determinada. No se ha solicitado indexación desde Google Search Console.
+
+## Actualización de portada — 20 de octubre de 2026
+
+En `feat/portada-procurador-justicia`, el titular pasa a «Procurador Tomás» y el fondo muestra una balanza de justicia en bronce, generada para mantener los tonos de Umbral. Se ajusta el tamaño del nombre en móvil y se sirven dos versiones WebP de 69 KB y 22 KB. El [registro de recursos](docs/recursos-redisenyo.md) conserva procedencia, prompt y dimensiones.
+
+Verificado: 7 pruebas, compilación Vite e inspección de portada en 320/390/768/1440 px sin desbordamiento observado. Cambio preparado en rama y vista previa; promoción a producción pendiente.
